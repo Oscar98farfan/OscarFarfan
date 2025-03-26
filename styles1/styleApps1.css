@@ -1,8 +1,8 @@
 :root {
-    --azul-fuerte: #3c6e99; /* Cambiado: Azul industrial */
-    --azul-oscuro: #4d9d6c; /* Cambiado: Verde proceso */
-    --azul-claro: #536b94;  /* Cambiado: Azul datos */
-    --azul-suave: #e8f5ff;  /* Cambiado: Azul muy claro */
+    --azul-fuerte: #003785;
+    --azul-oscuro: #1465bb;
+    --azul-claro: #81c9fa;
+    --azul-suave: #b9ffff;
     --black: #000000;
     --white: #ffffff;
     --gray: #f4f4f4;
@@ -173,22 +173,16 @@ iframe {
 
 
 
-/* ----- Footer ----- */
 footer {
     background: linear-gradient(180deg, var(--azul-oscuro), var(--azul-fuerte));
     color: var(--white);
     padding: 20px 0;
     text-align: center;
-    width: 100%;
-    clear: both; /* Asegura que no haya elementos flotantes afectando */
-    position: relative; /* Establece un contexto de posicionamiento */
 }
 
 .footer-content {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0 15px; /* Añade padding para evitar que el contenido toque los bordes */
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
 }
 
 .footer-content p {
@@ -201,7 +195,6 @@ footer {
     justify-content: center;
     gap: 20px;
     margin-bottom: 10px;
-    flex-wrap: wrap; /* Permite que los enlaces se envuelvan en pantallas pequeñas */
 }
 
 .footer-links a {
@@ -219,7 +212,6 @@ footer {
     justify-content: center;
     gap: 15px;
     margin-top: 15px;
-    flex-wrap: wrap; /* Permite que los iconos se envuelvan en pantallas pequeñas */
 }
 
 .social-links img {
@@ -232,23 +224,23 @@ footer {
 }
 
 
-/* ----- Botón de WhatsApp ----- */
+
 .box-btn-whatsapp {
-    position: fixed; /* Cambiado de sticky a fixed para evitar problemas de flujo */
+    position: sticky;
     bottom: 50px;
     right: 10px;
     z-index: 999;
-    /* Eliminado float: right que podría estar causando problemas */
+    float: right;
+    display: block;
 }
 
 .btn-whatsapp {
     width: 80px;
     height: auto;
-    display: block; /* Asegura que el botón sea un bloque */
 }
 
 .btn-whatsapp:hover {
-    transform: translateY(-15px);
+    transform: translateY(-15px)
 }
 
 
@@ -301,49 +293,5 @@ footer {
     }
     .device-controls {
         display: none;
-    }
-}
-
-/* ----- Media Queries para Responsividad ----- */
-@media (max-width: 768px) {
-    /* Ajustes específicos para el footer en móvil */
-    footer {
-        padding: 20px 10px;
-    }
-    
-    .footer-content {
-        width: 100%;
-    }
-    
-    .footer-links {
-        gap: 15px; /* Reduce el espacio entre enlaces en móvil */
-    }
-    
-    /* Ajusta el tamaño del botón de WhatsApp en móvil */
-    .box-btn-whatsapp {
-        bottom: 30px;
-        right: 10px;
-    }
-    
-    .btn-whatsapp {
-        width: 60px; /* Reduce el tamaño en móvil */
-    }
-    
-    /* Asegura que el contenido principal no tenga márgenes excesivos */
-    main {
-        margin: 0px 10px;
-        padding: 0 10px;
-    }
-}
-
-/* Para pantallas muy pequeñas */
-@media (max-width: 480px) {
-    .footer-links {
-        gap: 10px;
-        flex-direction: column; /* Apila los enlaces verticalmente en pantallas muy pequeñas */
-    }
-    
-    .social-links {
-        gap: 10px;
     }
 }
