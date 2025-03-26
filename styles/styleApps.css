@@ -171,6 +171,8 @@ iframe {
     margin-top: 40px;
 }
 
+
+
 footer {
     background: linear-gradient(180deg, var(--azul-oscuro), var(--azul-fuerte));
     color: var(--white);
@@ -220,6 +222,7 @@ footer {
 .social-links img:hover {
     transform: scale(1.1);
 }
+
 
 
 .box-btn-whatsapp {

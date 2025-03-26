@@ -297,9 +297,8 @@ header {
 }
 
 .btn-whatsapp:hover {
-    transform: translateY(-15px)
+    transform: scale(1.2);
 }
-
 
 
 /* ----- Grid de Proyectos ----- */
@@ -330,4 +329,54 @@ header {
     font-weight: bold;
     font-size: var(--lg);
     transition: transform 0.3s ease,
+}
+
+footer {
+    background: linear-gradient(180deg, var(--azul-oscuro), var(--azul-fuerte));
+    color: var(--white);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    font-size: var(--sm);
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: var(--md);
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-links img {
+    width: 35px;
+    transition: 0.3s;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
 }
