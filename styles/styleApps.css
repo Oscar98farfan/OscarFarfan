@@ -230,9 +230,8 @@ footer {
     bottom: 50px;
     right: 10px;
     z-index: 999;
-    display: flex;
-    align-items:flex-end;
-    justify-content: flex-end;
+    float: right;
+    display: block;
 }
 
 .btn-whatsapp {
