@@ -280,6 +280,28 @@ header {
     font-size: var(--md);
 }
 
+
+.box-btn-whatsapp {
+    position: sticky;
+    bottom: 50px;
+    right: 10px;
+    z-index: 999;
+    display: flex;
+    align-items:flex-end;
+    justify-content: flex-end;
+}
+
+.btn-whatsapp {
+    width: 80px;
+    height: auto;
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-15px)
+}
+
+
+
 /* ----- Grid de Proyectos ----- */
 .project-grid {
     display: grid;
