@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Análisis de datos sobre matriculados en universidades - Portfolio de Oscar Farfan">
+    <title>Análisis de Matriculados en Universidades | Oscar Farfan</title>
+    <link rel="stylesheet" href="../styles/styleAnalisisDatos.css">
+    <!-- Opcional: Agregar fuente desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="../index.html" aria-label="Volver a la página principal">
+                <span aria-hidden="true">⬅</span> Volver
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="encabezado">
+            <h1>Análisis de Matriculados en Universidades</h1>
+            <p class="description">
+                Este análisis examina los datos de matriculación en universidades a nivel nacional, 
+                mostrando la distribución por género, carreras y universidades. Los datos revelan 
+                tendencias importantes sobre la educación superior en nuestro país.
+            </p>
+        </section>
+
+        <div class="contenido">
+            <section class="carrusel-metricas" aria-label="Visualización de datos y métricas clave">
+                <!-- Carrusel mejorado -->
+                <div class="carrusel" aria-label="Galería de dashboards">
+                    <div class="carrusel-imagenes">
+                        <img src="../img/AnalisisDatos/Analisis1-1.png" alt="Dashboard de distribución de matriculados por género" loading="lazy">
+                        <img src="../img/AnalisisDatos/Analisis1-2.png" alt="Dashboard de distribución por carreras universitarias" loading="lazy">
+                        <img src="../img/AnalisisDatos/Analisis1-Graf-1.png" alt="Dashboard de tendencias de matriculación por año" loading="lazy">
+                        <img src="../img/AnalisisDatos/Analisis1-Graf-2.png" alt="Dashboard de tendencias de matriculación por año" loading="lazy">
+                        <img src="../img/AnalisisDatos/Analisis1-Graf-3.png" alt="Dashboard de tendencias de matriculación por año" loading="lazy">
+                    </div>
+                    <div class="carrusel-botones">
+                        <button class="carrusel-boton" onclick="moverCarrusel(-1)" aria-label="Imagen anterior">&#10094;</button>
+                        <button class="carrusel-boton" onclick="moverCarrusel(1)" aria-label="Imagen siguiente">&#10095;</button>
+                    </div>
+                    <div class="carrusel-indicadores" aria-hidden="true">
+                        <!-- Los indicadores se generarán con JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Panel de métricas mejorado -->
+                <div class="panel-metricas">
+                    <div class="metrica metrica-principal">
+                        <h2>14,326,518</h2>
+                        <p>Total de matriculados</p>
+                    </div>
+                    <div class="metrica">
+                        <h2>6,749,015</h2>
+                        <p>Hombres matriculados</p>
+                    </div>
+                    <div class="metrica">
+                        <h2>7,577,503</h2>
+                        <p>Mujeres matriculadas</p>
+                    </div>
+                    <div class="metrica">
+                        <h2>8,618</h2>
+                        <p>Carreras disponibles</p>
+                    </div>
+                    <div class="metrica">
+                        <h2>331</h2>
+                        <p>Universidades</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="analisis-detalle">
+                <h2>Hallazgos Principales</h2>
+                <div class="hallazgos-grid">
+                    <div class="hallazgo-card">
+                        <h3>Distribución por Género</h3>
+                        <p>Las mujeres representan el 52.9% del total de matriculados, superando a los hombres en la mayoría de las carreras, excepto en ingenierías y ciencias exactas.</p>
+                    </div>
+                    <div class="hallazgo-card">
+                        <h3>Carreras Populares</h3>
+                        <p>Administración, Derecho y Medicina continúan siendo las carreras con mayor demanda, representando el 35% del total de matriculados.</p>
+                    </div>
+                    <div class="hallazgo-card">
+                        <h3>Crecimiento Anual</h3>
+                        <p>Se observa un crecimiento sostenido del 3.2% anual en matriculaciones, con mayor incremento en carreras relacionadas con tecnología.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="metodologia">
+                <h2>Metodología</h2>
+                <p>Este análisis utiliza datos del Ministerio de Educación recopilados entre 2015 - 2020. Se procesaron utilizando una archivo csv y se visualizaron con Power BI. Los datos fueron limpiados y normalizados para asegurar su precisión.</p>
+            </section>
+
+            <section class="descarga">
+                <a href="../archivos/analisis-matriculados.zip" class="btn-descarga" download>
+                    <span aria-hidden="true">📥</span> Descargar Proyecto Completo
+                </a>
+                <p class="descarga-info">Incluye dataset, notebooks de análisis y archivos de Power BI</p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Botón de WhatsApp -->
+    <a href="https://wa.me/+573224424450?text=Hola%20Oscar,%20me%20interesa%20tu%20análisis%20de%20datos%20sobre%20matriculados" class="box-btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <img src="../img/WhatsApp.png" alt="Logo de WhatsApp" class="btn-whatsapp">
+    </a>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Oscar Farfan. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos de Uso</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/Oscar98farfan" target="_blank" aria-label="Perfil de GitHub">
+                    <img src="../img/Lgithub.png" alt="GitHub">
+                </a>
+                <a href="https://www.linkedin.com/in/oscar-daniel-farfan-juanias-75bb21237/" target="_blank" aria-label="Perfil de LinkedIn">
+                    <img src="../img/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://www.facebook.com/oscar.farfan.31/" target="_blank" aria-label="Perfil de Facebook">
+                    <img src="../img/facebook.png" alt="Facebook">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script/scriptsAnalisis.js" defer></script>
+</body>
+</html>
