@@ -43,7 +43,7 @@ function sendToWhatsApp(event) {
         `*Mensaje:*%0A${message}`;
     
     // Tu número de WhatsApp (con código de país)
-    const phoneNumber = "573224424450"; // Reemplaza con tu número
+    const phoneNumber = "573114888796"; // Reemplaza con tu número
     
     // Crear el enlace de WhatsApp
     const whatsappLink = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;

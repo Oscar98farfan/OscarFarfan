@@ -613,8 +613,9 @@ footer {
 
 .contact-item {
     display: flex;
-    align-items: flex-start;
+    align-items:center;
     gap: 15px;
+    justify-content: center;
 }
 
 .contact-icon {
