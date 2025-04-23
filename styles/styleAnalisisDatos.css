@@ -210,6 +210,14 @@ main {
     min-width: 300px;
 }
 
+.panel-metricas h3 {
+    color: var(--azul-fuerte);
+    text-align: center;
+    font-size: 25px;
+    grid-area: 1/1/2/3;
+    
+}
+
 .metrica {
     background: linear-gradient(135deg, var(--azul-fuerte), var(--azul-claro));
     color: var(--white);

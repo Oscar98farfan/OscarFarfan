@@ -83,124 +83,124 @@
                 <h2>Código en Python</h2>
                 <div class="code-container">
                     <pre><code class="language-python">
-                        import pandas as pd
-                        import matplotlib.pyplot as plt
-                        import matplotlib.gridspec as gridspec
-                        # Cargar el dataset
-                        file_path = "./online_retail.csv"
-                        df = pd.read_csv(file_path)
-                        # Rellenar valores nulos
-                        df = df.fillna("Sin Dato")
-                        # Limpiar los datos de los valores duplicados y los almaceno en un nuevo df
-                        df_cleaned = df.drop_duplicates()
-                        # Convertir columna fechas en formato fecha
-                        df_cleaned["InvoiceDate"] = pd.to_datetime(df_cleaned["InvoiceDate"])
-                        df_cleaned["Description"] = df_cleaned["Description"].astype(str)
-                        # funcion para categorizar datos
-                        def categorize(amount):
-                            if amount < 25:
-                                return "Low"
-                            elif amount < 200:
-                                return "Medium"
-                            else:
-                                return "Hight"
-                        # Creacion de nuevas columnas con nuevos datos a obtener
-                        df_cleaned["TotalAmount"] = df_cleaned["Quantity"] * df_cleaned["UnitPrice"]
-                        df_cleaned["Year"] = df_cleaned["InvoiceDate"].dt.year
-                        df_cleaned["Month"] = df_cleaned["InvoiceDate"].dt.month
-                        df_cleaned["Day"] = df_cleaned["InvoiceDate"].dt.day
-                        df_cleaned["Semester"] = df_cleaned["Month"].apply(lambda x:1 if x<=6 else 2)
-                        df_cleaned["Trimestre"] = df_cleaned["Month"].apply(lambda x:1 if x<=3 else 2 if x<=6 else 3 if x<=9 else 4)
-                        df_cleaned["Categorize"] = df_cleaned["TotalAmount"].apply(categorize)
-                        # Creamos un nuevo df con agrupaciones o informaciòn especifica 
-                        sales_by_year = df_cleaned.groupby("Year")["TotalAmount"].sum().reset_index()
-                        sales_by_semester = df_cleaned.groupby(["Year","Semester"])["TotalAmount"].sum().reset_index()
-                        sales_by_trimestre = df_cleaned.groupby(["Year","Trimestre"])["TotalAmount"].sum().reset_index()
-                        sales_by_month = df_cleaned.groupby(["Year","Month"])["TotalAmount"].sum()
-                        # Obtenemos el top 10 de prodcutos
-                        top_products = df_cleaned.groupby("StockCode")["Quantity"].sum().sort_values(ascending=False).head(10)
-                        top_products = top_products.reset_index()
-                        top_products = pd.merge(top_products, df_cleaned[["StockCode", "Description"]].drop_duplicates(), on="StockCode", how="left")
-                        total_returns = df_cleaned[df_cleaned["Quantity"] < 0].shape[0]
-                        total_non_returns = df_cleaned[df_cleaned["Quantity"] >= 0].shape[0]
-                        total_low = df_cleaned[df_cleaned["Categorize"] == "Low"].shape[0]
-                        total_medium = df_cleaned[df_cleaned["Categorize"] == "Medium"].shape[0]
-                        total_hight = df_cleaned[df_cleaned["Categorize"] == "Hight"].shape[0]
-                        sales_by_country = df_cleaned.groupby("Country")["TotalAmount"].sum()
-                        sales_by_country_top10 = sales_by_country.sort_values(ascending=False).head(10)
-                        sales_by_categorize = df_cleaned.groupby("Categorize")["TotalAmount"].count()
-                        
-                        # Crea graficos con matplotlib con funciones
-                        def graph_returns():
-                            labels = ["Devoluciones", "No Devoluciones"]
-                            sizes = [total_returns, total_non_returns]
-                            colors = ["skyblue", "orange"]
-                            plt.figure(figsize=(8,8))
-                            plt.pie(sizes, labels=labels, colors=colors , autopct="%1.1f%%", startangle=140)
-                            plt.title("% transacciones con y sin Devolucion")
-                            plt.axis("equal")
-                            plt.show()   
-                        def graph_categorize():
-                            labels = ["Low", "Medium", "Hight"]
-                            sizes = [total_low, total_medium, total_hight]
-                            colors = ["skyblue", "orange", "gold"]
-                            plt.figure(figsize=(8,8))
-                            plt.pie(sizes, labels=labels, colors=colors , autopct="%1.1f%%", startangle=140)
-                            plt.title("% por categoria de monto")
-                            plt.axis("equal")
-                            plt.show()
-                        def graph_sales_month():
-                            sales_by_month.index = sales_by_month.index.map(lambda x: f"{x[0]}-{x[1]:02d}")
-                            plt.figure(figsize=(8,6))
-                            plt.plot(sales_by_month.index, sales_by_month.values, marker="o", color="green")
-                            for i, value in enumerate(sales_by_month.values):
-                                plt.text(i, value, f"{value/1e6:.1f}M", ha='center', va='bottom', fontsize=9)
-                            plt.title("Ventas por mes")
-                            plt.xlabel("Meses")
-                            plt.xticks(rotation=45)
-                            plt.ylabel("Ventas (millones)")
-                            plt.show()
-                        def table_sales_semester():
-                            sales_by_semester["TotalAmount"] = sales_by_semester["TotalAmount"].map(lambda x: f"$ {x:,.0f}")
-                            fig, ax = plt.subplots(figsize=(6, 2))
-                            ax.axis("off")  # Oculta los ejes
-                            # Dibujar tabla
-                            tabla = ax.table(
-                                cellText=sales_by_semester.values,
-                                colLabels=sales_by_semester.columns,
-                                cellLoc="center",
-                                loc="center"
-                            )
-                            tabla.auto_set_font_size(False)
-                            tabla.set_fontsize(10)
-                            tabla.scale(1.2, 1.2)
-                            plt.show()
-                        def graph_sales_country():
-                            plt.figure(figsize=(10,4))
-                            bars = plt.bar(sales_by_country_top10.index, sales_by_country_top10.values, color = "skyblue", label = "Ventas por Pais")
-                            for bar in bars:
-                                yval = bar.get_height()
-                                plt.text(bar.get_x() + bar.get_width()/2, yval, f"{yval/1e6:.1f}M", ha='center', va='bottom', fontsize=9)
-                            plt.title("Top 10 Paises con Mayores Ventas")
-                            plt.xlabel("Top 10 Paises")
-                            plt.xticks(rotation=45)
-                            plt.ylabel("Ventas (millones)")
-                            plt.show()
-                        def graph_top10_products():
-                            plt.figure(figsize=(12,8))
-                            plt.barh(top_products["Description"], top_products["Quantity"], color = "salmon")
-                            plt.title("Top 10 Prodcutos mas Vendidos")
-                            plt.xlabel("Cantidad Vendida")
-                            #plt.xticks(rotation=45)
-                            plt.ylabel("Prodcuto")
-                            plt.gca().invert_yaxis()
-                            plt.show()
-                        graph_sales_month()
-                        graph_top10_products()
-                        graph_categorize()
-                        graph_returns()
-                        graph_sales_country()
-                        table_sales_semester()
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib.gridspec as gridspec
+# Cargar el dataset
+file_path = "./online_retail.csv"
+df = pd.read_csv(file_path)
+# Rellenar valores nulos
+df = df.fillna("Sin Dato")
+# Limpiar los datos de los valores duplicados y los almaceno en un nuevo df
+df_cleaned = df.drop_duplicates()
+# Convertir columna fechas en formato fecha
+df_cleaned["InvoiceDate"] = pd.to_datetime(df_cleaned["InvoiceDate"])
+df_cleaned["Description"] = df_cleaned["Description"].astype(str)
+# funcion para categorizar datos
+def categorize(amount):
+    if amount < 25:
+        return "Low"
+    elif amount < 200:
+        return "Medium"
+    else:
+        return "Hight"
+# Creacion de nuevas columnas con nuevos datos a obtener
+df_cleaned["TotalAmount"] = df_cleaned["Quantity"] * df_cleaned["UnitPrice"]
+df_cleaned["Year"] = df_cleaned["InvoiceDate"].dt.year
+df_cleaned["Month"] = df_cleaned["InvoiceDate"].dt.month
+df_cleaned["Day"] = df_cleaned["InvoiceDate"].dt.day
+df_cleaned["Semester"] = df_cleaned["Month"].apply(lambda x:1 if x<=6 else 2)
+df_cleaned["Trimestre"] = df_cleaned["Month"].apply(lambda x:1 if x<=3 else 2 if x<=6 else 3 if x<=9 else 4)
+df_cleaned["Categorize"] = df_cleaned["TotalAmount"].apply(categorize)
+# Creamos un nuevo df con agrupaciones o informaciòn especifica 
+sales_by_year = df_cleaned.groupby("Year")["TotalAmount"].sum().reset_index()
+sales_by_semester = df_cleaned.groupby(["Year","Semester"])["TotalAmount"].sum().reset_index()
+sales_by_trimestre = df_cleaned.groupby(["Year","Trimestre"])["TotalAmount"].sum().reset_index()
+sales_by_month = df_cleaned.groupby(["Year","Month"])["TotalAmount"].sum()
+# Obtenemos el top 10 de prodcutos
+top_products = df_cleaned.groupby("StockCode")["Quantity"].sum().sort_values(ascending=False).head(10)
+top_products = top_products.reset_index()
+top_products = pd.merge(top_products, df_cleaned[["StockCode", "Description"]].drop_duplicates(), on="StockCode", how="left")
+total_returns = df_cleaned[df_cleaned["Quantity"] < 0].shape[0]
+total_non_returns = df_cleaned[df_cleaned["Quantity"] >= 0].shape[0]
+total_low = df_cleaned[df_cleaned["Categorize"] == "Low"].shape[0]
+total_medium = df_cleaned[df_cleaned["Categorize"] == "Medium"].shape[0]
+total_hight = df_cleaned[df_cleaned["Categorize"] == "Hight"].shape[0]
+sales_by_country = df_cleaned.groupby("Country")["TotalAmount"].sum()
+sales_by_country_top10 = sales_by_country.sort_values(ascending=False).head(10)
+sales_by_categorize = df_cleaned.groupby("Categorize")["TotalAmount"].count()
+
+# Crea graficos con matplotlib con funciones
+def graph_returns():
+    labels = ["Devoluciones", "No Devoluciones"]
+    sizes = [total_returns, total_non_returns]
+    colors = ["skyblue", "orange"]
+    plt.figure(figsize=(8,8))
+    plt.pie(sizes, labels=labels, colors=colors , autopct="%1.1f%%", startangle=140)
+    plt.title("% transacciones con y sin Devolucion")
+    plt.axis("equal")
+    plt.show()   
+def graph_categorize():
+    labels = ["Low", "Medium", "Hight"]
+    sizes = [total_low, total_medium, total_hight]
+    colors = ["skyblue", "orange", "gold"]
+    plt.figure(figsize=(8,8))
+    plt.pie(sizes, labels=labels, colors=colors , autopct="%1.1f%%", startangle=140)
+    plt.title("% por categoria de monto")
+    plt.axis("equal")
+    plt.show()
+def graph_sales_month():
+    sales_by_month.index = sales_by_month.index.map(lambda x: f"{x[0]}-{x[1]:02d}")
+    plt.figure(figsize=(8,6))
+    plt.plot(sales_by_month.index, sales_by_month.values, marker="o", color="green")
+    for i, value in enumerate(sales_by_month.values):
+        plt.text(i, value, f"{value/1e6:.1f}M", ha='center', va='bottom', fontsize=9)
+    plt.title("Ventas por mes")
+    plt.xlabel("Meses")
+    plt.xticks(rotation=45)
+    plt.ylabel("Ventas (millones)")
+    plt.show()
+def table_sales_semester():
+    sales_by_semester["TotalAmount"] = sales_by_semester["TotalAmount"].map(lambda x: f"$ {x:,.0f}")
+    fig, ax = plt.subplots(figsize=(6, 2))
+    ax.axis("off")  # Oculta los ejes
+    # Dibujar tabla
+    tabla = ax.table(
+        cellText=sales_by_semester.values,
+        colLabels=sales_by_semester.columns,
+        cellLoc="center",
+        loc="center"
+    )
+    tabla.auto_set_font_size(False)
+    tabla.set_fontsize(10)
+    tabla.scale(1.2, 1.2)
+    plt.show()
+def graph_sales_country():
+    plt.figure(figsize=(10,4))
+    bars = plt.bar(sales_by_country_top10.index, sales_by_country_top10.values, color = "skyblue", label = "Ventas por Pais")
+    for bar in bars:
+        yval = bar.get_height()
+        plt.text(bar.get_x() + bar.get_width()/2, yval, f"{yval/1e6:.1f}M", ha='center', va='bottom', fontsize=9)
+    plt.title("Top 10 Paises con Mayores Ventas")
+    plt.xlabel("Top 10 Paises")
+    plt.xticks(rotation=45)
+    plt.ylabel("Ventas (millones)")
+    plt.show()
+def graph_top10_products():
+    plt.figure(figsize=(12,8))
+    plt.barh(top_products["Description"], top_products["Quantity"], color = "salmon")
+    plt.title("Top 10 Prodcutos mas Vendidos")
+    plt.xlabel("Cantidad Vendida")
+    #plt.xticks(rotation=45)
+    plt.ylabel("Prodcuto")
+    plt.gca().invert_yaxis()
+    plt.show()
+graph_sales_month()
+graph_top10_products()
+graph_categorize()
+graph_returns()
+graph_sales_country()
+table_sales_semester()
                     </code></pre>
                 </div>
                 <p class="description">Aquí podrás encontrar el código completo utilizado para construir cada una de las gráficas del análisis. Se incluyen las etapas de tratamiento de datos, desde la carga del dataset hasta la transformación y creación de nuevas columnas. Además, se muestran fragmentos relevantes del código con explicaciones para entender cómo se organizaron y visualizaron los resultados.</p>

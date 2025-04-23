@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Análisis de ventas minoristas con Python - Portfolio de Oscar Farfan">
+    <title>Dashboard de Ventas con Python | Oscar Farfan</title>
+    <link rel="stylesheet" href="../styles/styleAnalisisDatos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/monokai.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/stackoverflow-dark.min.css"> -->
+
+
+    <link rel="shortcut icon" href="../img/favicon.ico">
+</head>
+
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="../index.html" aria-label="Volver a la página principal">
+                <span aria-hidden="true">⬅</span> Volver
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="encabezado">
+            <h1>De SQL a Dashboard: Transformando Datos en Decisiones</h1>
+            <p class="description">
+                Este análisis utiliza solamente SQL para la extracción de la información y generación de consultas y Power BI para la construcción de un dashboard interactivo que muestra los insights clave. Incluye consultas y graficos a partir de los datos creados.
+            </p>
+        </section>
+
+        <div class="contenido">
+            <section class="carrusel-metricas" aria-label="Visualización del dashboard">
+                <div class="carrusel">
+                    <div class="carrusel-imagenes">
+                        <img src="../img/AnalisisDatos/Analisis4-3.png" alt="Dashboard de ventas creado con SQL" loading="lazy">
+                        <img src="../img/AnalisisDatos/Analisis4-0.png" alt="Dashboard de ventas creado con SQL" loading="lazy">
+                        <img src="../img/AnalisisDatos/Analisis4-2.png" alt="Dashboard de ventas creado con SQL" loading="lazy">
+                        <img src="../img/AnalisisDatos/Analisis4-4.png" alt="Dashboard de ventas creado con SQL" loading="lazy">
+                        <img src="../img/AnalisisDatos/Analisis4-1.png" alt="Dashboard de ventas creado con SQL" loading="lazy">
+                    </div>
+                    <div class="carrusel-botones">
+                        <button class="carrusel-boton" onclick="moverCarrusel(-1)" aria-label="Imagen anterior">&#10094;</button>
+                        <button class="carrusel-boton" onclick="moverCarrusel(1)" aria-label="Imagen siguiente">&#10095;</button>
+                    </div>
+                    <div class="carrusel-indicadores" aria-hidden="true">
+                        <!-- Los indicadores se generarán con JavaScript -->
+                    </div>
+                </div>
+
+                <div class="panel-metricas">
+                    <h3>Metricas Importantes</h3>
+                    <div class="metrica metrica-principal">
+                        <h2>Construcción de Cero</h2>
+                        <p>Creación de la BD, Llenado, Extracción de Información y Visualización</p>
+                    </div>
+                    <div class="metrica">
+                        <h2>SQL</h2>
+                        <p>Lenguaje utilizado</p>
+                    </div>
+                    <div class="metrica">
+                        <h2>Power BI</h2>
+                        <p>Programa de visualización</p>
+                    </div>
+                    <div class="metrica">
+                        <h2>Consultas Complejas</h2>
+                        <p>Mas de 6 consultas realziadas con diferente nivel de complejidad</p>
+                    </div>
+                    <div class="metrica">
+                        <h2>DataSet</h2>
+                        <p>Creado y llenado con datos ficcticios por medio de SQL</a><p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="analisis-detalle">
+                <h2>Código en SQL</h2>
+                <div class="code-container">
+                    <pre><code class="language-sql">
+-- Creación de Tablas
+use tienda;
+CREATE TABLE productos (
+    id_producto SERIAL PRIMARY KEY,
+    nombre VARCHAR(100),
+    categoria VARCHAR(50),
+    precio DECIMAL(10,2),
+    stock INT
+);
+CREATE TABLE categorias (
+    id_categoria SERIAL PRIMARY KEY,
+    nombre VARCHAR(50),
+    descripcion TEXT
+);
+CREATE TABLE proveedores (
+    id_proveedor SERIAL PRIMARY KEY,
+    nombre VARCHAR(100),
+    contacto VARCHAR(100),
+    telefono VARCHAR(20),
+    ciudad VARCHAR(50)
+);
+CREATE TABLE empleados (
+    id_empleado SERIAL PRIMARY KEY,
+    nombre VARCHAR(100),
+    cargo VARCHAR(50),
+    correo VARCHAR(100),
+    fecha_ingreso DATE
+);
+CREATE TABLE ventas (
+    id_venta SERIAL PRIMARY KEY,
+    id_cliente INT REFERENCES clientes(id_cliente),
+    id_empleado INT REFERENCES empleados(id_empleado),
+    fecha DATE,
+    total DECIMAL(10,2)
+);
+CREATE TABLE detalle_venta (
+    id_detalle SERIAL PRIMARY KEY,
+    id_venta INT REFERENCES ventas(id_venta),
+    id_producto INT REFERENCES productos(id_producto),
+    cantidad INT,
+    precio_unitario DECIMAL(10,2)
+);
+CREATE TABLE devoluciones (
+    id_devolucion SERIAL PRIMARY KEY,
+    id_venta INT REFERENCES ventas(id_venta),
+    fecha DATE,
+    motivo TEXT
+);
+CREATE TABLE pagos (
+    id_pago SERIAL PRIMARY KEY,
+    id_cliente INT REFERENCES clientes(id_cliente),
+    fecha DATE,
+    monto DECIMAL(10,2),
+    metodo_pago VARCHAR(50)
+);
+-- Consultas 
+-- Total Ventas por año y mes
+SELECT 
+EXTRACT(YEAR FROM fecha) AS año, EXTRACT(MONTH FROM fecha) AS mes, SUM(total) AS Total_Ventas
+FROM ventas
+GROUP BY año,mes
+ORDER BY año,mes;
+
+-- Top 10 prodcutos mas Vendidos
+SELECT p.nombre, SUM(dv.cantidad) AS Cantidad_Vendida FROM productos p
+JOIN detalle_venta dv ON dv.id_producto = p.id_producto
+GROUP BY p.id_producto, p.nombre
+ORDER BY SUM(dv.cantidad) Desc
+LIMIT 10;
+
+-- Categorias con mayor ingreso
+SELECT p.categoria, SUM(dv.cantidad * dv.precio_unitario) AS Ingreso_Total, COUNT(p.categoria) FROM productos p
+JOIN detalle_venta dv ON dv.id_producto = p.id_producto
+GROUP BY p.categoria
+ORDER BY ingreso_total Desc;
+
+-- Clientes con mas ventas 
+SELECT cl.nombre As "Nombre Cliente" , SUM(v.total) As ventas_Totales, COUNT(v.id_cliente) As Cantidad_ventas 
+FROM clientes cl
+JOIN ventas v ON v.id_cliente = cl.id_cliente
+GROUP BY cl.id_cliente
+ORDER BY   Cantidad_ventas Desc
+LIMIT 10;
+
+-- Total mensual de ingresos (Ventas - Devoluciones)
+SELECT 
+    EXTRACT(YEAR FROM v.fecha) AS año,
+    EXTRACT(MONTH FROM v.fecha) AS mes,
+    SUM(v.total) - COALESCE(SUM(dv.total), 0) AS ingresos_netos
+FROM ventas v
+LEFT JOIN devoluciones d ON v.id_venta = d.id_venta
+LEFT JOIN ventas dv ON d.id_venta = dv.id_venta
+GROUP BY año, mes
+ORDER BY año, mes;
+
+-- Empleados con mas ventas
+SELECT e.nombre, SUM(v.total) FROM empleados e
+JOIN ventas v ON v.id_empleado = e.id_empleado
+GROUP BY v.id_empleado
+ORDER BY v.total Desc;
+
+-- Ventas por mes y por empleado
+SELECT EXTRACT(YEAR FROM v.fecha) As Año, EXTRACT(MONTH FROM v.fecha) As Mes, e.nombre, SUM(v.total) 
+FROM empleados e
+JOIN ventas v ON e.id_empleado = v.id_empleado
+GROUP BY Año, Mes, e.id_empleado, e.nombre
+ORDER BY Año, Mes, v.total Desc;
+
+                    </code></pre>
+                </div>
+                <p class="description">Aquí podrás encontrar el código completo utilizado para construir cada una de las gráficas del análisis. Se incluyen las etapas de creación de tablas y generación de consultas en SQL.</p>
+            </section>
+
+            <section class="metodologia">
+                <h2>Metodología</h2>
+                <p>Se diseñó y construyó una base de datos relacional en <strong>MySQL Workbench</strong>, alimentada con datos ficticios para simular escenarios reales. A través de consultas SQL, se extrajeron indicadores clave de desempeño (KPIs) como parte del análisis exploratorio. <br><br>
+                ✅ Modelado y normalización de la base de datos. <br>
+                ✅ Inserción de datos ficticios relevantes. <br>
+                ✅ Consultas SQL para obtención de métricas estratégicas. <br><br>
+                Finalmente, los resultados fueron integrados a <strong>Power BI</strong> para su visualización, permitiendo una interpretación dinámica e interactiva del comportamiento de los datos.</p>
+            </section>
+
+            <section class="descarga">
+                <a href="../documents/ProyectoSQL.sql" class="btn-descarga" download>
+                    <span aria-hidden="true">📥</span> Descargar Proyecto
+                </a>
+                <p class="descarga-info">Incluye código SQL Completo.</p>
+            </section>
+        </div>
+    </main>
+
+    <a href="https://wa.me/+573114888796?text=Hola%20Oscar,%20me%20interesa%20tu%20análisis%20con%20Python" class="box-btn-whatsapp" target="_blank" rel="noopener noreferrer">
+        <img src="../img/WhatsApp.png" alt="Logo de WhatsApp" class="btn-whatsapp">
+    </a>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Oscar Farfan. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos de Uso</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/Oscar98farfan" target="_blank">
+                    <img src="../img/Lgithub.png" alt="GitHub">
+                </a>
+                <a href="https://www.linkedin.com/in/oscar-daniel-farfan-juanias-75bb21237/" target="_blank">
+                    <img src="../img/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://www.facebook.com/oscar.farfan.31/" target="_blank">
+                    <img src="../img/facebook.png" alt="Facebook">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script/scriptsAnalisis.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
