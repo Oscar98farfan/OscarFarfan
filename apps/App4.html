@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App 1 - Oscar Farfan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../styles/styleApps.css">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="../index.html">⬅ Volver</a>
+        </nav>
+    </header>
+
+    <section class="encabezado">
+        <h1>Prueba la Aplicación de Gestión de Pedidos y Reservas Inteligente - Sin Complicaciones</h1>
+        <p class="description">Visualiza nuestra aplicación y optimiza y simplifica la gestion de inventarios desde tu celular. Mira las vistas de dispositivo móvil, tablet y computador.</p>
+    </section>
+
+    <main>
+        <div class="app-container">
+            <div class="phone-container">
+                <iframe src="https://www.appsheet.com/start/7ee7d195-82ec-464b-b8d2-f51ede82d717?platform=mobile" id="appframe"></iframe>
+            </div>
+            <div class="demo-container">
+                <h1>Gestión de Pedidos y Reservas Inteligente y Sin Complicaciones</h1>
+                <p>Tomar pedidos o gestionar reservas no debería ser un proceso lento ni confuso. En negocios como tiendas online, hoteles, restaurantes o peluquerías, ofrecer una experiencia fluida y profesional al cliente es clave para fidelizar y crecer. <br><br>Nuestra aplicación está diseñada para simplificar todo el flujo de recepción de pedidos o reservas, desde la visualización de productos o servicios hasta la confirmación automática por WhatsApp. Ya no necesitarás anotar a mano, coordinar por mensajes dispersos o correr el riesgo de perder información importante.<br><br>Con esta herramienta, puedes mostrar tu catálogo personalizado, recibir solicitudes directamente desde el celular y confirmar cada pedido o reserva con un solo toque. Ya sea que vendas productos o administres turnos, esta solución te da el control total, estés donde estés. Caracteristicas destacadas: <br><br>
+                ✅ <b> Catálogo personalizado y visual:</b> Presenta tus productos o servicios de forma clara y atractiva. <br>
+                ✅ <b>Recepción de pedidos o reservas al instante:</b> Los datos ingresan automáticamente al sistema desde el celular del cliente o desde tu punto de venta. <br>
+                ✅ <b>Confirmación automática por WhatsApp:</b> Informa a tu cliente que su solicitud fue recibida y está en proceso, sin hacer nada manual. <br>
+                ✅ <b>Adaptabilidad a múltiples sectores:</b> Úsala para ventas en tiendas online o como sistema de reservas para hoteles, restaurantes o peluquerías. <br>
+                ✅ <b>Reportes descargables y registro histórico:</b> : Lleva control de pedidos y reservas con reportes exportables y trazabilidad total.<br><br>
+                Digitaliza tu atención al cliente y gana tiempo, precisión y profesionalismo. Con nuestra app, conviertes cada interacción en una experiencia sencilla, ordenada y eficiente. <b>¡Lleva tu negocio al siguiente nivel con esta poderosa herramienta digital!</b> 🚀
+            
+            </p>
+            </div>
+            <div class="device-controls">
+                <a onclick="changeView(event, 'mobile')" class="active" title="Vista móvil">
+                    <i class="fas fa-mobile-alt"></i>
+                </a>
+                <a onclick="openModal('tablet')" title="Vista tablet">
+                    <i class="fas fa-tablet-alt"></i>
+                </a>
+                <a onclick="openModal('desktop')" title="Vista escritorio">
+                    <i class="fas fa-desktop"></i>
+                </a>
+            </div>
+        </div>
+
+        
+        
+        <div id="tabletModal" class="modal">
+            <div class="modal-content" style="max-width: 820px;">
+                <span class="close" onclick="closeModal('tablet')">&times;</span>
+                <iframe class="modal-iframe" src="https://www.appsheet.com/start/7ee7d195-82ec-464b-b8d2-f51ede82d717" id="tabletFrame"></iframe>
+            </div>
+        </div>
+        
+        <div id="desktopModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('desktop')">&times;</span>
+                <iframe class="modal-iframe" src="https://www.appsheet.com/start/7ee7d195-82ec-464b-b8d2-f51ede82d717" id="desktopFrame"></iframe>
+            </div>
+        </div>
+    
+        <script  src="../script/scriptApps.js" defer></script>
+    </main>
+
+    <a href="https://wa.me/+573114888796?text=Quiero%20Conocer%20Mas%20De%20Tu%20Trabajo" class="box-btn-whatsapp" target="_blank" rel="noopener noreferrer">
+        <img src="../img/WhatsApp.png" alt="Logo de WhatsApp" class="btn-whatsapp">
+    </a>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Oscar Farfan. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos de Uso</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/Oscar98farfan" target="_blank"><img src="../img/Lgithub.png" alt="GitHub"></a>
+                <a href="https://www.linkedin.com/in/oscar-daniel-farfan-juanias-75bb21237/" target="_blank"><img src="../img/linkedin.png" alt="LinkedIn"></a>
+                <a href="https://www.facebook.com/oscar.farfan.31/" target="_blank"><img src="../img/facebook.png" alt="Facebook"></a>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+</html>
