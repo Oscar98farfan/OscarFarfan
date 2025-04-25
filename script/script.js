@@ -66,3 +66,27 @@ function sendToWhatsApp(event) {
         }, 1000);
     }, 500);
 }
+
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    fetch("https://formsubmit.co/tucorreo@example.com", {
+        method: "POST",
+        body: data
+    })
+    .then(response => {
+        if (response.ok) {
+            form.reset();
+            document.getElementById("formSuccess").style.display = "block";
+        } else {
+            alert("Hubo un error al enviar el mensaje.");
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("No se pudo enviar el mensaje.");
+    });
+});
