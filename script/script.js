@@ -67,13 +67,15 @@ function sendToWhatsApp(event) {
     }, 500);
 }
 
+
+
 document.getElementById("contactForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
     const form = e.target;
     const data = new FormData(form);
 
-    fetch("https://formsubmit.co/tucorreo@example.com", {
+    fetch("https://formsubmit.co/farfanjuaniasoscardaniel@gmail.com", {
         method: "POST",
         body: data
     })
