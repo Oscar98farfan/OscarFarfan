@@ -244,7 +244,16 @@
 
             <div class="form-group">
                 <label for="subject">Asunto</label>
-                <input type="text" id="subject" name="subject" placeholder="Asunto del mensaje">
+                <select id="subject" name="subject">
+                    <option value="" disabled selected>Selecciona un servicio</option>
+                    <option value="apps">Desarrollo de aplicaciones móviles</option>
+                    <option value="web">Desarrollo de página web estática</option>
+                    <option value="landing">Landing page</option>
+                    <option value="ecommerce">Tienda virtual (e-commerce)</option>
+                    <option value="dashboard">Dashboard interactivo (Power BI / Python)</option>
+                    <option value="automatizacion">Automatización con AppSheet</option>
+                    <option value="asesoria">Asesoría técnica o consultoría</option>
+                </select>
             </div>
 
             <div class="form-group">
