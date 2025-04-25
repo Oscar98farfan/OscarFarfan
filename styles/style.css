@@ -679,7 +679,9 @@ footer {
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+#subject,
+#subject option value {
     width: 100%;
     padding: 12px 15px;
     border: 1px solid #ddd;
