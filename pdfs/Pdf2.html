@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App 1 - Oscar Farfan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../styles/styleApps.css">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="../index.html">⬅ Volver</a>
+        </nav>
+    </header>
+
+    <section class="encabezado">
+        <h1>🧠 Aprendiendo y Mejorando: Soluciones Básicas de Lógica en Python para Entrevistas</h1>
+        <p class="description">Este PDF reúne una serie de ejercicios prácticos de lógica en Python, pensados para fortalecer el pensamiento algorítmico y prepararse para entrevistas técnicas.</p>
+    </section>
+
+    <main>
+        <div class="app-container">
+            <div class="phone-container">
+                <iframe src="../documents/PDFs2.pdf" id="appframe"></iframe>
+            </div>
+            <div class="demo-container">
+                <h1>Lógica de Programación Python</h1>
+                <p>Este PDF recopila ejercicios básicos de lógica en Python, diseñados para fortalecer las habilidades necesarias en entrevistas técnicas y desafíos de programación. Cada ejercicio incluye el código, una breve explicación y consejos prácticos para mejorar. <br> <br>
+                <strong>Puntos clave:</strong><br> <br>
+                ✅ Ejercicios prácticos variados: <br>
+                🔍 <strong>Ordenamiento con algoritmo burbuja:</strong> Genera listas aleatorias y las ordena de forma ascendente/descendente. <br>
+                🔍 <strong>Impresión de triángulos con caracteres:</strong> Usa bucles para crear figuras personalizadas. <br>
+                🔍 <strong>Comparación de popularidad (el gato más famoso):</strong> Encuentra el elemento con mayor valor en una lista.<br>
+                🔍 <strong>Promedio de notas de estudiantes:</strong> Calcula promedios individuales y grupales. <br>
+                🔍 <strong>Análisis de paquetes por destino:</strong> Útil para ejercicios de logística. <br>
+                🔍 <strong>Contador de letras:</strong> Extrae estadísticas de texto. <br>
+                🔍 <strong>Verificación de palíndromos:</strong> Comprueba si una palabra se lee igual al revés. <br><br>
+                ✅ Consejos para cada ejercicio: <br>
+                Cada página incluye recomendaciones para extender, optimizar o adaptar el código, fomentando la exploración y el pensamiento crítico.<br>
+                ✅ Enfoque formativo y reflexivo: <br>
+                Se resalta que más allá de resolver ejercicios, lo importante es comprender la lógica que hay detrás, y cómo este tipo de pensamiento puede aplicarse también en análisis de datos y problemas reales. <br>
+
+            </p>
+            </div>
+            <div class="device-controls">
+                <a onclick="changeView(event, 'mobile')" class="active" title="Vista móvil">
+                    <i class="fas fa-mobile-alt"></i>
+                </a>
+                <a onclick="openModal('tablet')" title="Vista tablet">
+                    <i class="fas fa-tablet-alt"></i>
+                </a>
+                <a onclick="openModal('desktop')" title="Vista escritorio">
+                    <i class="fas fa-desktop"></i>
+                </a>
+            </div>
+        </div>
+
+        
+        
+        <div id="tabletModal" class="modal">
+            <div class="modal-content" style="max-width: 820px;">
+                <span class="close" onclick="closeModal('tablet')">&times;</span>
+                <iframe class="modal-iframe" src="../documents/PDFs2.pdf" id="tabletFrame"></iframe>
+            </div>
+        </div>
+        
+        <div id="desktopModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('desktop')">&times;</span>
+                <iframe class="modal-iframe" src="../documents/PDFs2.pdf" id="desktopFrame"></iframe>
+            </div>
+        </div>
+    
+    </main>
+    
+    <a href="https://wa.me/+573114888796?text=Quiero%20Conocer%20Mas%20De%20Tu%20Trabajo" class="box-btn-whatsapp" target="_blank" rel="noopener noreferrer">
+        <img src="../img/WhatsApp.png" alt="Logo de WhatsApp" class="btn-whatsapp">
+    </a>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Oscar Farfan. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos de Uso</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/Oscar98farfan" target="_blank"><img src="../img/Lgithub.png" alt="GitHub"></a>
+                <a href="https://www.linkedin.com/in/oscar-daniel-farfan-juanias-75bb21237/" target="_blank"><img src="../img/linkedin.png" alt="LinkedIn"></a>
+                <a href="https://www.facebook.com/oscar.farfan.31/" target="_blank"><img src="../img/facebook.png" alt="Facebook"></a>
+            </div>
+        </div>
+    </footer>
+    
+    <script  src="../script/scriptApps.js" defer></script>
+
+</body>
+</html>
