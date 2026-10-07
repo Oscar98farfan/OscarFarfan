@@ -2,302 +2,383 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oscar Farfan</title>
-    <link rel=
-    "stylesheet" href="./styles/style.css">
+    <title>Oscar Farfan | Análisis de Datos, BI y Desarrollo</title>
+    <meta name="description" content="Portafolio de Oscar Daniel Farfan Juanias: Ingeniero Industrial y Especialista en Análisis de Datos y Big Data. Power BI, Python, SQL, Machine Learning, automatización y desarrollo web.">
+    <meta property="og:title" content="Oscar Farfan | Análisis de Datos, BI y Desarrollo">
+    <meta property="og:description" content="Proyectos de análisis de datos, machine learning, automatización y aplicaciones web.">
+    <meta property="og:image" content="./img/Logo.png">
+    <link rel="stylesheet" href="./styles/style.css">
     <link rel="shortcut icon" href="./img/favicon.ico">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="nav-container">
-                <button class="hamburger-menu">☰</button>
+                <a href="#inicio" class="nav-brand">Oscar <span>Farfan</span></a>
                 <ul class="nav-list">
                     <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#destacados">Proyectos</a></li>
                     <li><a href="#proyectos-apps">Apps</a></li>
-                    <li><a href="#proyectos-datos">Análisis de Datos</a></li>
-                    <li><a href="#documentos-PDF">PDFs Técnicos</a></li>
-                    <li><a href="#acerca-de-mi">Acerca de Mi</a></li>
+                    <li><a href="#proyectos-datos">Análisis de datos</a></li>
+                    <li><a href="#acerca-de-mi">Sobre mí</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
+                <button class="hamburger-menu" aria-label="Abrir menú">☰</button>
             </div>
         </nav>
         <aside class="side-menu">
             <ul class="side-menu-list">
                 <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#destacados">Proyectos destacados</a></li>
+                <li class="sub"><a href="./proyectos/transimperio.html">TransImperio</a></li>
+                <li class="sub"><a href="./proyectos/cyberrisk.html">CyberRisk</a></li>
+                <li class="sub"><a href="./proyectos/mundial-2026.html">Mundial 2026 ML</a></li>
                 <li><a href="#proyectos-apps">Apps</a></li>
-                <li><a href="./apps/App1.html" style="font-size: 14px;">✅ Ver App Control de Ventas </a></li>
-                <li><a href="./apps/App2.html" style="font-size: 14px;">✅ Ver App Control de Almacen</a></li>
-                <li><a href="./apps/App3.html" style="font-size: 14px;">✅ Ver App Control de Inventarios</a></li>
-                <li><a href="./apps/App4.html" style="font-size: 14px;">✅ Ver App Recepción de Pedidos</a></li>
-                <li><a href="#proyectos-datos">Análisis de Datos</a></li>
-                <li><a href="./analisisDatos/Analisis1.html" style="font-size: 14px;">✅ Ver Analisis  Matriculas Colombia</a></li>
-                <li><a href="./analisisDatos/Analisis2.html" style="font-size: 14px;">✅ Ver Analisis Accidentes USA</a></li>
-                <li><a href="./analisisDatos/Analisis3.html" style="font-size: 14px;">✅ Ver Analisis Dashboard en Python</a></li>
-                <li><a href="./analisisDatos/Analisis4.html" style="font-size: 14px;">✅ Ver Analisis Dashboard en SQL</a></li>
-                <li><a href="#documentos-PDF">PDFs Técnicos</a></li>
-                <li><a href="#acerca-de-mi">Acerca de Mi</a></li>
+                <li class="sub"><a href="./apps/App1.html">Control de ventas</a></li>
+                <li class="sub"><a href="./apps/App2.html">Control de almacén</a></li>
+                <li class="sub"><a href="./apps/App3.html">Inventarios</a></li>
+                <li class="sub"><a href="./apps/App4.html">Recepción de pedidos</a></li>
+                <li><a href="#proyectos-datos">Análisis de datos</a></li>
+                <li class="sub"><a href="./analisisDatos/Analisis1.html">Matrículas Colombia</a></li>
+                <li class="sub"><a href="./analisisDatos/Analisis2.html">Accidentes USA</a></li>
+                <li class="sub"><a href="./analisisDatos/Analisis3.html">Dashboard en Python</a></li>
+                <li class="sub"><a href="./analisisDatos/Analisis4.html">Dashboard en SQL</a></li>
+                <li><a href="#documentos-PDF">Documentos técnicos</a></li>
+                <li><a href="#acerca-de-mi">Sobre mí</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </aside>
         <div class="overlay"></div>
-        
     </header>
-    
+
     <main>
+        <!-- ===== HERO ===== -->
         <section id="inicio" class="hero">
-            <div class="hero-content">
-                <img class="profile-img" src="./img/Logo.png" alt="Oscar Farfan">
-                <div class="hero-text">
-                    <h1>Oscar Daniel Farfan Juanias</h1>
-                    <h3>Ingeniero Industrial | Analista de Datos | Desarrollador Web</h3>
-                    <p>Especializado en optimización de procesos, mejora continua, desarrollo de aplicaciones y análisis de datos.</p>
-                    <a class="btn" href="./documents/HV-Oscar Farfan.pdf" download>Descargar CV</a>
+            <div class="container">
+                <div class="hero-content">
+                    <img class="profile-img" src="./img/Logo.png" alt="Oscar Farfan">
+                    <div class="hero-text">
+                        <h1>Oscar Daniel Farfan Juanias</h1>
+                        <p class="hero-role">Ingeniero Industrial | Especialista en Análisis de Datos y Big Data</p>
+                        <p class="hero-desc">Convierto datos operativos en decisiones: tableros en Power BI, automatizaciones con Python, SQL y Power Platform, y aplicaciones empresariales a la medida.</p>
+                        <div class="hero-actions">
+                            <a class="btn" href="#destacados">Ver proyectos</a>
+                            <a class="btn btn-outline" href="./documents/HV-Oscar Farfan.pdf" download>Descargar CV</a>
+                        </div>
+                        <div class="social-links">
+                            <a href="https://github.com/Oscar98farfan" target="_blank" rel="noopener" aria-label="GitHub"><img src="./img/Lgithub.png" alt="GitHub"></a>
+                            <a href="https://www.linkedin.com/in/oscar-daniel-farfan-juanias-75bb21237/" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="./img/linkedin.png" alt="LinkedIn"></a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="social-links">
-                <a href="https://github.com/Oscar98farfan" target="_blank"><img src="./img/Lgithub.png" alt="GitHub"></a>
-                <a href="https://www.linkedin.com/in/oscar-daniel-farfan-juanias-75bb21237/" target="_blank"><img src="./img/linkedin.png" alt="LinkedIn"></a>
-                <a href="https://www.facebook.com/oscar.farfan.31/" target="_blank"><img src="./img/facebook.png" alt="Facebook"></a>
-            </div>
-        </section>
-        
-        <section id="proyectos-apps" class="section">
-            <h2>Proyectos de Aplicaciones</h2>
-            <p>Explora las aplicaciones desarrolladas con AppSheet y otras plataformas.</p>
-            <div class="project-grid">
-                <div>
-                    <a href="./apps/App1.html" class="project-card">📱 Control de Ventas <br><br> Abrir y Probar la App 🚀</a>
-                    <p>"Gestiona productos, ventas, compras y facturas, todo en un solo lugar. Mantén el control total de tu stock, recibe alertas cuando esté bajo y agiliza la comunicación con tus clientes a través de la integración con WhatsApp. ¡Descubre la eficiencia y el poder de nuestra aplicación para hacer crecer tu negocio!" </p>
-                </div>
-                <div>
-                    <a href="./apps/App2.html" class="project-card">📱 Control de Almacen <br><br> Abrir y Probar la App 🚀</a>
-                    <p>"Presentamos nuestra solución para la gestión inteligente de almacenes. Registra tus entradas y salidas, y visualiza en tiempo real el espacio disponible y ocupado. Optimiza tu almacenamiento, toma decisiones informadas y maximiza la eficiencia de tu operación."</p>
-                </div>
-                <div>
-                    <a href="./apps/App3.html" class="project-card">📱 Inventarios <br><br> Abrir y Probar la App 🚀</a>
-                    <p>"Simplifica tus inventarios con nuestra solución integral. Realiza levantamientos precisos, con o sin historial, y genera automáticamente primeros, segundos y terceros conteos. Obtén un consolidado final para una visión completa de tu stock. Optimiza tu gestión de inventarios y toma decisiones informadas."</p>
-                </div>
-                <div>
-                    <a href="./apps/App4.html" class="project-card">📱 Recepcion de Pedidos <br><br> Abrir y Probar la App 🚀</a>
-                    <p>"Optimiza la recepción de pedidos con nuestra app. Muestra tu catálogo, toma pedidos y confirma vía WhatsApp de forma automática. Ideal para tiendas online, y adaptable para reservas en hoteles, restaurantes o peluquerías. Simplifica tu gestión y mejora la experiencia de tus clientes desde el primer clic."</p>
+                <div class="hero-stats">
+                    <div class="stat"><strong>5+</strong><span>años de experiencia</span></div>
+                    <div class="stat"><strong>13</strong><span>proyectos publicados</span></div>
+                    <div class="stat"><strong>2</strong><span>apps web con backend</span></div>
                 </div>
             </div>
         </section>
-        
+
+        <!-- ===== PROYECTOS DESTACADOS ===== -->
+        <section id="destacados" class="section">
+            <div class="container">
+                <div class="section-head">
+                    <span class="badge">Proyectos destacados</span>
+                    <h2>Soluciones reales con datos, ML y desarrollo web</h2>
+                    <p>Tres proyectos recientes: una plataforma para un cliente de logística, un sistema de riesgo cibernético con machine learning y un modelo predictivo del Mundial 2026.</p>
+                </div>
+
+                <div class="featured-grid">
+                    <article class="featured-card">
+                        <div class="featured-cover">
+                            <img src="./img/proyectos/transimperio-login.webp" alt="Pantalla de inicio de sesión del área de clientes de TransImperio" loading="lazy" style="object-position: center 8%">
+                        </div>
+                        <div class="featured-body">
+                            <span class="badge">Cliente real</span>
+                            <h3>Plataforma web y portal de clientes para empresa de logística</h3>
+                            <p>Sitio corporativo con portal de clientes: inicio de sesión, panel, consulta de guías y carga masiva de envíos desde Excel. Por detrás, una app en AppSheet funciona como CRM de la operación.</p>
+                            <div class="tags">
+                                <span class="tag">JavaScript</span><span class="tag">Tailwind CSS</span><span class="tag">Apps Script</span><span class="tag">AppSheet</span>
+                            </div>
+                            <div class="featured-actions">
+                                <a class="btn btn-sm" href="./proyectos/transimperio.html">Ver proyecto</a>
+                                <a class="btn btn-sm btn-light" href="https://www.transimperio.com" target="_blank" rel="noopener">Visitar sitio ↗</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="featured-card">
+                        <div class="featured-cover">
+                            <img src="./img/proyectos/cyberrisk-wiki.webp" alt="Wiki del proyecto CyberRisk Intelligence Platform" loading="lazy">
+                        </div>
+                        <div class="featured-body">
+                            <span class="badge">Especialización · ESEIT</span>
+                            <h3>CyberRisk Intelligence Platform</h3>
+                            <p>Plataforma que estima a qué vulnerabilidades está expuesta una PYME según el software que usa, con datos de NVD/CVE y un modelo de machine learning. Mi rol: ML Engineer.</p>
+                            <div class="tags">
+                                <span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">Flask</span><span class="tag">Big Data</span>
+                            </div>
+                            <div class="featured-actions">
+                                <a class="btn btn-sm" href="./proyectos/cyberrisk.html">Ver proyecto</a>
+                                <a class="btn btn-sm btn-light" href="https://github.com/Oscar98farfan/CyberRiskIntelligencePlatform" target="_blank" rel="noopener">Repositorio ↗</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="featured-card">
+                        <div class="featured-cover">
+                            <img src="./img/proyectos/mundial-candidatos.webp" alt="Probabilidad por ronda de los 16 principales candidatos del Mundial 2026" loading="lazy">
+                        </div>
+                        <div class="featured-body">
+                            <span class="badge">Machine learning</span>
+                            <h3>WorldCup2026-ML: predicción del Mundial 2026</h3>
+                            <p>Modelo Gradient Boosting con datos de mundiales desde 1930 y simulación Monte Carlo de 10.000 torneos. Tenía a España como favorita número 1, y España fue campeona.</p>
+                            <div class="tags">
+                                <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">Monte Carlo</span>
+                            </div>
+                            <div class="featured-actions">
+                                <a class="btn btn-sm" href="./proyectos/mundial-2026.html">Ver proyecto</a>
+                                <a class="btn btn-sm btn-light" href="https://github.com/Oscar98farfan/WorldCup2026-ML" target="_blank" rel="noopener">Repositorio ↗</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== APPS ===== -->
+        <section id="proyectos-apps" class="section section-alt">
+            <div class="container">
+                <div class="section-head">
+                    <span class="badge">Aplicaciones</span>
+                    <h2>Apps empresariales low-code</h2>
+                    <p>Aplicaciones desarrolladas en AppSheet que puedes abrir y probar en vista móvil, tablet o escritorio.</p>
+                </div>
+                <div class="project-grid">
+                    <a href="./apps/App1.html" class="project-card">
+                        <h3>Control de ventas</h3>
+                        <p>Gestión de productos, ventas, compras y facturas en un solo lugar.</p>
+                        <ul><li>Alertas de stock bajo</li><li>Roles de administrador y vendedor</li><li>Integración con WhatsApp</li></ul>
+                        <span class="card-link">Probar la app →</span>
+                    </a>
+                    <a href="./apps/App2.html" class="project-card">
+                        <h3>Control de almacén</h3>
+                        <p>Registro de entradas y salidas con visualización del espacio disponible y ocupado en tiempo real.</p>
+                        <ul><li>Movimientos de inventario</li><li>Ocupación por ubicación</li></ul>
+                        <span class="card-link">Probar la app →</span>
+                    </a>
+                    <a href="./apps/App3.html" class="project-card">
+                        <h3>Inventarios</h3>
+                        <p>Levantamientos de inventario con o sin historial y conteos sucesivos automáticos.</p>
+                        <ul><li>Primer, segundo y tercer conteo</li><li>Consolidado final del stock</li></ul>
+                        <span class="card-link">Probar la app →</span>
+                    </a>
+                    <a href="./apps/App4.html" class="project-card">
+                        <h3>Recepción de pedidos</h3>
+                        <p>Catálogo, toma de pedidos y confirmación automática vía WhatsApp. Adaptable a tiendas, hoteles o restaurantes.</p>
+                        <ul><li>Catálogo de productos</li><li>Confirmación por WhatsApp</li></ul>
+                        <span class="card-link">Probar la app →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ANÁLISIS DE DATOS ===== -->
         <section id="proyectos-datos" class="section">
-            <h2>Proyectos de Análisis de Datos</h2>
-            <p>Descubre los análisis y visualizaciones desarrolladas en Power BI, Excel y Python.</p>
-            <div class="project-grid">
-                <div>
-                    <a href="./analisisDatos/Analisis1.html" class="project-card">📊 Análisis y Dashboard con Power BI  <br><br> Mira el Dashboard 🚀</a>
-                    <p>Este dashboard muestra tendencias de matrícula por género, regiones y las carreras más demandadas. Con esta visualización, es más fácil identificar patrones y oportunidades en el sector educativo.<br> 🔍 Algunos insights clave:
-                        <br>✅ Matrículas por año y género.
-                        <br>✅ Carreras con mayor demanda.
-                        <br>✅ Distribución por departamentos.
-                    </p>
+            <div class="container">
+                <div class="section-head">
+                    <span class="badge">Análisis de datos</span>
+                    <h2>Dashboards y análisis</h2>
+                    <p>Análisis y visualizaciones desarrollados con Power BI, Python, SQL y Excel.</p>
                 </div>
-                <div>
-                    <a href="./analisisDatos/Analisis2.html" class="project-card">📊 Análisis y Dashboard con Power BI  <br><br> Mira el Dashboard 🚀</a>
-                    <p>Los datos por sí solos no cuentan historias, pero un buen análisis puede darles vida. Este dashboard explora las tendencias de accidentes y fallecimientos en EE.UU. durante el 2022, revelando patrones clave que pueden ayudar a comprender mejor este problema. <br> 🔍 Algunos insights clave:
-                        <br>✅ Estados con mayor tasa de mortalidad por accidentes viales.
-                        <br>✅ Comparación de fallecimientos por mes y grupo de edad.
-                        <br>✅ Tiempo promedio de reacción de organismos de emergencia en diferentes estados.
-                    </p>
-                </div>
-                <div>
-                    <a href="./analisisDatos/Analisis3.html" class="project-card">📊 Análisis y Dashboard Python<br><br> Mira el Dashboard 🚀</a>
-                    <p>Análisis desarrollado en Python como lenguaje principal. Se trabajó con la biblioteca Pandas para la limpieza, transformación y manipulación de los datos, incluyendo: <br>
-                        ✅ Conversión de tipos de datos. <br>
-                        ✅ Eliminación y tratamiento de valores nulos. <br>         
-                        ✅ Agrupaciones y resúmenes estadísticos. <br>
-                        ✅ Creación de columnas personalizadas mediante funciones definidas por el usuario. <br><br>
-                        Para la visualización, se utilizó Matplotlib.</p>
-                </div>
-                <div>
-                    <a href="./analisisDatos/Analisis4.html" class="project-card">📊 Análisis y Dashboard SQL<br><br> Mira el Dashboard 🚀</a>
-                    <p>Análisis desarrollado solo con SQL, desde la creación de la base de datos, y la generación de consultas complejas para extraer información valiosa. Trasladé los resultados a Power BI para construir un dashboard interactivo que muestra insights clave como:
-                        <br>
-                        ✅Productos más vendidos. <br>
-                        ✅Desempeño mensual de ventas. <br>         
-                        ✅Comparativa por años.<br>
-                        ✅Contribución por categorias y empleados <br> 
-                    </p>
-                </div>
-        </section>
-
-        <section id="documentos-PDF" class="section">
-            <h2>Desarrollo y Análisis en PDF</h2>
-            <p>En esta sección comparto PDFs con ejercicios y documentación de proyectos realizados en Python, SQL, Power BI, Excel y otras herramientas. Son ejemplos prácticos que reflejan mi experiencia en análisis de datos y programación.</p>
-            <div class="project-grid">
-                <div>
-                    <a href="./pdfs/Pdf1.html" class="project-card">📊 Creación y Consultas con SQL<br><br> Mira el PDF 🚀</a>
-                    <p>Un proyecto práctico donde diseño una base de datos de ventas, creo consultas SQL para extraer insights clave y construyo un dashboard interactivo en Power BI. Ideal para ver cómo se conectan la lógica de datos y la visualización.
-                        <br> 🔍 En él verás ejemplos de:
-                        <br>✅ Creación de tablas en SQL para una base de datos de ventas.
-                        <br>✅ Consultas SQL para obtener métricas clave y descubrir patrones.
-                        <br>✅ Dashboard en Power BI que traduce los datos en visualizaciones útiles para la toma de decisiones.
-                    </p>
-                </div>
-                <div>
-                    <a href="./pdfs/Pdf2.html" class="project-card">📊 Lógica de Programación Python<br><br> Mira el PDF 🚀</a>
-                    <p>Este PDF reúne una serie de ejercicios prácticos de lógica en Python, pensados para fortalecer el pensamiento algorítmico y prepararse para entrevistas técnicas. <br> 🔍 En él verás ejemplos como:
-                        <br>✅ Ordenar listas con algoritmo burbuja.
-                        <br>✅ Calcular promedios y contar letras.
-                        <br>✅ Manejo de diccionarios.
-                        <br>✅ Verificar palíndromos y construir figuras con bucles.
-                    </p>
+                <div class="project-grid">
+                    <a href="./analisisDatos/Analisis1.html" class="project-card">
+                        <div class="tags"><span class="tag tag-azul">Power BI</span></div>
+                        <h3>Matrículas en Colombia</h3>
+                        <p>Tendencias de matrícula por género, región y carreras más demandadas.</p>
+                        <ul><li>Matrículas por año y género</li><li>Carreras con mayor demanda</li><li>Distribución por departamentos</li></ul>
+                        <span class="card-link">Ver dashboard →</span>
+                    </a>
+                    <a href="./analisisDatos/Analisis2.html" class="project-card">
+                        <div class="tags"><span class="tag tag-azul">Power BI</span></div>
+                        <h3>Accidentes viales en EE. UU. (2022)</h3>
+                        <p>Patrones de accidentes y fallecimientos para entender mejor el problema.</p>
+                        <ul><li>Estados con mayor mortalidad</li><li>Fallecimientos por mes y edad</li><li>Tiempos de respuesta de emergencias</li></ul>
+                        <span class="card-link">Ver dashboard →</span>
+                    </a>
+                    <a href="./analisisDatos/Analisis3.html" class="project-card">
+                        <div class="tags"><span class="tag tag-azul">Python</span><span class="tag tag-azul">Pandas</span></div>
+                        <h3>Análisis y dashboard en Python</h3>
+                        <p>Limpieza, transformación y visualización de datos con Pandas y Matplotlib.</p>
+                        <ul><li>Tratamiento de nulos y tipos</li><li>Agrupaciones y estadísticas</li><li>Funciones personalizadas</li></ul>
+                        <span class="card-link">Ver dashboard →</span>
+                    </a>
+                    <a href="./analisisDatos/Analisis4.html" class="project-card">
+                        <div class="tags"><span class="tag tag-azul">SQL</span><span class="tag tag-azul">Power BI</span></div>
+                        <h3>Análisis de ventas con SQL</h3>
+                        <p>Base de datos creada desde cero, consultas complejas y dashboard interactivo en Power BI.</p>
+                        <ul><li>Productos más vendidos</li><li>Desempeño mensual y anual</li><li>Aporte por categoría y empleado</li></ul>
+                        <span class="card-link">Ver dashboard →</span>
+                    </a>
                 </div>
 
-        </section>
-
-    </main>
-
-    <section class="section about-section" id="acerca-de-mi">
-        <h2>Acerca de Mí</h2>
-        
-        <div class="about-container">
-            <div class="about-image">
-                <img src="./img/Photo-Me.png" alt="Oscar Farfan" class="about-profile-img">
+                <h3 class="subsection-title" id="documentos-PDF">Documentos técnicos</h3>
+                <div class="project-grid">
+                    <a href="./pdfs/Pdf1.html" class="project-card">
+                        <div class="tags"><span class="tag tag-azul">PDF</span><span class="tag tag-azul">SQL</span></div>
+                        <h3>Creación y consultas con SQL</h3>
+                        <p>Diseño de una base de datos de ventas, consultas para extraer métricas clave y dashboard en Power BI.</p>
+                        <span class="card-link">Ver PDF →</span>
+                    </a>
+                    <a href="./pdfs/Pdf2.html" class="project-card">
+                        <div class="tags"><span class="tag tag-azul">PDF</span><span class="tag tag-azul">Python</span></div>
+                        <h3>Lógica de programación en Python</h3>
+                        <p>Ejercicios de lógica y algoritmos: ordenamiento, diccionarios, palíndromos y bucles.</p>
+                        <span class="card-link">Ver PDF →</span>
+                    </a>
+                </div>
             </div>
-            
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Perfil Profesional</h3>
-                    <p>Soy Ingeniero Industrial con enfasis en optimización de procesos y mejora continua, cuento con conocimientos en desarrollo de aplicaciones moviles (Low-Code), análisis de datos y desarrollo web. Mi enfoque combina habilidades técnicas con una visión estratégica para resolver problemas complejos y mejorar la eficiencia operativa.</p>
-                    
-                    <h3>Trayectoria</h3>
-                    <p>Con más de 6 años de experiencia en el sector industrial y tecnológico, he liderado proyectos de optimización que han resultado en mejoras significativas de productividad y reducción de costos. Mi experiencia abarca desde el análisis de datos hasta la implementación de soluciones tecnológicas.</p>
+        </section>
+
+        <!-- ===== SOBRE MÍ ===== -->
+        <section class="section section-alt" id="acerca-de-mi">
+            <div class="container">
+                <div class="section-head">
+                    <span class="badge">Sobre mí</span>
+                    <h2>Datos al servicio de la operación</h2>
                 </div>
-                
-                <div class="skills-container">
-                    <h3>Habilidades</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item"><div class="skill-name">AppSheet</div>
-                            <div class="skill-bar"><div class="skill-level" style="width: 100%"></div>
+                <div class="about-container">
+                    <div class="about-image">
+                        <img src="./img/Photo-Me.png" alt="Oscar Farfan" class="about-profile-img">
+                        <div class="about-card">
+                            <h4>Publicación</h4>
+                            <p>Revista Mare Ingenii, Ingenierías Vol. 2 (2020): "Metodologías innovadoras para el diseño de nuevos proyectos de Emprendimiento de Base Tecnológica (EBT)".</p>
+                        </div>
+                        <div class="about-card">
+                            <h4>Idiomas</h4>
+                            <p>Español nativo · Inglés intermedio</p>
+                        </div>
+                    </div>
+
+                    <div class="about-content">
+                        <h3>Perfil</h3>
+                        <p>Ingeniero Industrial y Especialista en Análisis de Datos y Big Data, con más de 5 años de experiencia en análisis, automatización y visualización de datos para la toma de decisiones. He trabajado en inventarios, control de activos, avalúos y cadena de suministro, desarrollando aplicaciones y tableros que reducen tiempos operativos y errores. Hoy mi enfoque está en Data Analytics, Business Intelligence e inteligencia artificial aplicada.</p>
+
+                        <h3>Experiencia</h3>
+                        <div class="timeline">
+                            <div class="timeline-item actual">
+                                <span class="timeline-date">Junio 2025 – actualidad</span>
+                                <h4>Auxiliar en Analítica de Datos</h4>
+                                <span class="timeline-company">Colombiana de Comercio – Corbeta</span>
+                                <p>Tableros en Power BI, soluciones con Power Apps y Power Automate, automatizaciones con VBA, Python y SQL, y cruce de bases de datos para reportes analíticos.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-date">Enero 2019 – marzo 2025</span>
+                                <h4>Ing. Desarrollador y Líder de Innovación</h4>
+                                <span class="timeline-company">DCM Ingenieros Consultores</span>
+                                <p>Apps low-code para inventarios y avalúos, coordinación de proyectos técnicos e inspección de maquinaria. Estandaricé procesos de inspección e inventario y fui ascendido tres veces.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-date">Enero – mayo 2018</span>
+                                <h4>Analista de Inventarios</h4>
+                                <span class="timeline-company">Confianza Ingenieros Consultores</span>
+                                <p>Inventario de activos, manejo de bases de información y elaboración de informes.</p>
                             </div>
                         </div>
 
-                        <div class="skill-item"><div class="skill-name">Análisis de Datos</div>
-                            <div class="skill-bar"><div class="skill-level" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item"><div class="skill-name">Excel Avanzado</div>
-                            <div class="skill-bar"><div class="skill-level" style="width: 95%"></div>
-                            </div>
+                        <h3>Formación</h3>
+                        <div class="edu-grid">
+                            <div class="edu-item"><h4>Especialización en Análisis de Datos y Big Data</h4><p>ESEIT · Grado en octubre de 2026</p></div>
+                            <div class="edu-item"><h4>Ingeniería Industrial</h4><p>Corporación Universitaria Republicana · 2020</p></div>
+                            <div class="edu-item"><h4>Máster en Código (Full Stack)</h4><p>Protalento – DEV.F · 2023</p></div>
+                            <div class="edu-item"><h4>Diplomado en Power BI</h4><p>Politécnico Superior de Colombia · 2025</p></div>
                         </div>
 
-                        <div class="skill-item"><div class="skill-name">Power BI</div>
-                            <div class="skill-bar"><div class="skill-level" style="width: 85%"></div>
-                            </div>
+                        <h3>Habilidades</h3>
+                        <div class="skills-group">
+                            <h4>Datos y BI</h4>
+                            <div class="tags"><span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Excel avanzado</span><span class="tag">VBA</span><span class="tag">ETL</span></div>
                         </div>
-                        
-                        <div class="skill-item"><div class="skill-name">Optimización de Procesos</div>
-                            <div class="skill-bar"><div class="skill-level" style="width: 90%"></div>
-                            </div>
+                        <div class="skills-group">
+                            <h4>Machine learning</h4>
+                            <div class="tags"><span class="tag">Scikit-learn</span><span class="tag">Gradient Boosting</span><span class="tag">Simulación Monte Carlo</span><span class="tag">Jupyter</span></div>
                         </div>
-
-                        <div class="skill-item"><div class="skill-name">Python</div>
-                            <div class="skill-bar"><div class="skill-level" style="width: 70%"></div>
-                            </div>
+                        <div class="skills-group">
+                            <h4>Automatización y low-code</h4>
+                            <div class="tags"><span class="tag">AppSheet</span><span class="tag">Power Apps</span><span class="tag">Power Automate</span><span class="tag">Fabric</span></div>
                         </div>
-
-                        <div class="skill-item"><div class="skill-name">Desarrollo Web</div>
-                            <div class="skill-bar"><div class="skill-level" style="width: 65%"></div>
-                            </div>
+                        <div class="skills-group">
+                            <h4>Desarrollo web</h4>
+                            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Flask</span><span class="tag">Google Apps Script</span><span class="tag">Git</span></div>
                         </div>
-                        
-                        
-                        
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <!-- ===== CONTACTO ===== -->
+        <section class="section" id="contacto">
+            <div class="container">
+                <div class="section-head">
+                    <span class="badge">Contacto</span>
+                    <h2>¿Trabajamos juntos?</h2>
+                    <p>Si tienes una vacante, un proyecto o una pregunta, escríbeme y te respondo lo antes posible.</p>
+                </div>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="contact-icon">📍</i>
+                            <div class="contact-text"><h3>Ubicación</h3><p>Bogotá, Colombia</p></div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="contact-icon">📧</i>
+                            <div class="contact-text"><h3>Email</h3><a href="mailto:farfanjuaniasoscardaniel@gmail.com">farfanjuaniasoscardaniel@gmail.com</a></div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="contact-icon">📱</i>
+                            <div class="contact-text"><h3>Teléfono</h3><p>+57 322 442 4450</p></div>
+                        </div>
+                        <div class="social-links">
+                            <a href="https://github.com/Oscar98farfan" target="_blank" rel="noopener" aria-label="GitHub"><img src="./img/Lgithub.png" alt="GitHub"></a>
+                            <a href="https://www.linkedin.com/in/oscar-daniel-farfan-juanias-75bb21237/" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="./img/linkedin.png" alt="LinkedIn"></a>
+                        </div>
+                    </div>
 
-    <!-- Sección de Contacto -->
-<section class="section contact-section" id="contacto">
-    <h2>Contacto</h2>
-    <p class="contact-intro">¿Interesado en trabajar juntos o tienes alguna pregunta? Completa el formulario y me pondré en contacto contigo lo antes posible.</p>
-    
-    <div class="contact-container">
-        <div class="contact-info">
-            <div class="contact-item">
-                <i class="contact-icon">📍</i>
-                <div class="contact-text">
-                    <h3>Ubicación</h3>
-                    <p>Bogotá, Colombia</p>
+                    <form class="contact-form" id="contactForm" onsubmit="sendToWhatsApp(event)">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="nombre@empresa.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Asunto</label>
+                            <input type="text" id="subject" name="subject" placeholder="Vacante, proyecto, consulta">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" placeholder="Cuéntame en qué te puedo ayudar" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn submit-btn">Enviar por WhatsApp</button>
+                    </form>
                 </div>
             </div>
-            
-            <div class="contact-item">
-                <i class="contact-icon">📧</i>
-                <div class="contact-text">
-                    <h3>Email</h3>
-                    <p>oscar98farfan@gmail.com <br>oscar98farfan@hotmail.com</p>
-                    <p></p>
-                </div>
-            </div>
-            
-            <div class="contact-item">
-                <i class="contact-icon">📱</i>
-                <div class="contact-text">
-                    <h3>Teléfono</h3>
-                    <p>+57 322 442 4450</p>
-                </div>
-            </div>
-            
-            <div class="contact-social">
-                <h3>Sígueme</h3>
-                <div class="social-links">
-                    <a href="https://github.com/Oscar98farfan" target="_blank"><img src="img/Lgithub.png" alt="GitHub"></a>
-                    <a href="https://www.linkedin.com/in/oscar-daniel-farfan-juanias-75bb21237/" target="_blank"><img src="img/linkedin.png" alt="LinkedIn"></a>
-                    <a href="https://www.facebook.com/oscar.farfan.31/" target="_blank"><img src="img/facebook.png" alt="Facebook"></a>
-                </div>
-            </div>
-        </div>
-        
-        <form class="contact-form" id="contactForm" onsubmit="sendToWhatsApp(event)">
-            <div class="form-group">
-                <label for="name">Nombre</label>
-                <input type="text" id="name" name="name" placeholder="Tu nombre" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Tu email" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="subject">Asunto</label>
-                <input type="text" id="subject" name="subject" placeholder="Asunto del mensaje">
-            </div>
-            
-            <div class="form-group">
-                <label for="message">Mensaje</label>
-                <textarea id="message" name="message" placeholder="Tu mensaje" rows="5" required></textarea>
-            </div>
-            
-            <button type="submit" class="btn submit-btn">Enviar Mensaje</button>
-        </form>
-    </div>
-</section>
-
+        </section>
+    </main>
 
     <a href="https://wa.me/+573114888796?text=Quiero%20Conocer%20Mas%20De%20Tu%20Trabajo" class="box-btn-whatsapp" target="_blank" rel="noopener noreferrer">
-        <img src="./img/WhatsApp.png" alt="Logo de WhatsApp" class="btn-whatsapp">
+        <img src="./img/WhatsApp.png" alt="Escribir por WhatsApp" class="btn-whatsapp">
     </a>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Oscar Farfan. Todos los derechos reservados.</p>
+        <div class="container footer-content">
+            <p>&copy; 2026 Oscar Farfan</p>
             <div class="footer-links">
-                <a href="#">Política de Privacidad</a>
-                <a href="#">Términos de Uso</a>
+                <a href="#destacados">Proyectos</a>
+                <a href="#acerca-de-mi">Sobre mí</a>
                 <a href="#contacto">Contacto</a>
             </div>
         </div>

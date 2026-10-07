@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TransImperio | Oscar Farfan</title>
+    <meta name="description" content="Plataforma web y portal de clientes para TransImperio, empresa de logística en Colombia, con backend en Google Apps Script y CRM en AppSheet.">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">Oscar <span>Farfan</span></a>
+            <ul class="nav-list" style="display:flex">
+                <li><a href="../index.html#destacados">← Proyectos</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="detail-hero">
+        <div class="container">
+            <a class="back-link" href="../index.html#destacados">← Volver a proyectos</a>
+            <span class="badge">Cliente real · En producción</span>
+            <h1>TransImperio: plataforma web y portal de clientes</h1>
+            <p>Sitio corporativo y portal de autogestión para una empresa de logística y distribución en Colombia. Los clientes cargan sus envíos, generan guías y consultan su operación sin depender de correos ni llamadas.</p>
+            <div class="hero-actions">
+                <a class="btn" href="https://www.transimperio.com" target="_blank" rel="noopener">Visitar transimperio.com ↗</a>
+            </div>
+            <div class="detail-meta">
+                <div class="stat"><strong>Web + portal</strong><span>sitio público y área de clientes</span></div>
+                <div class="stat"><strong>Backend</strong><span>Google Apps Script</span></div>
+                <div class="stat"><strong>CRM</strong><span>app en AppSheet</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container detail-layout">
+            <div class="detail-main">
+                <h2>El reto</h2>
+                <p>La empresa necesitaba una presencia web profesional y, sobre todo, una forma de que sus clientes empresariales registraran envíos en volumen y obtuvieran sus guías sin pasos manuales. La información de la operación ya vivía en hojas de cálculo y en una app de AppSheet, así que la solución tenía que integrarse con eso.</p>
+
+                <h2>Qué construí</h2>
+                <ul class="feature-list">
+                    <li><strong>Sitio corporativo:</strong> presentación de servicios (envíos nacionales, logística urbana, paquetería aérea, reexpediciones y radicación de documentos), cobertura, rastreo de envíos y formulario de contacto.</li>
+                    <li><strong>Inicio de sesión de clientes:</strong> acceso con sesión por token contra el backend.</li>
+                    <li><strong>Carga masiva desde Excel:</strong> el cliente sube la plantilla, el sistema la lee en el navegador, valida los datos y muestra una vista previa antes de importar.</li>
+                    <li><strong>Gestión de guías:</strong> indicadores por estado (recepcionado, despachado, entregado, devuelto, anulado), filtros, generación de guías en lote en PDF, visor integrado y descarga.</li>
+                    <li><strong>CRM en AppSheet:</strong> por detrás, el equipo de la empresa gestiona clientes y operación desde una app low-code conectada a los mismos datos.</li>
+                </ul>
+
+                <figure class="figure">
+                    <img src="../img/proyectos/transimperio-panel.webp" alt="Panel Mis Guías con indicadores por estado, filtros y generación de PDF" loading="lazy">
+                    <figcaption>Panel de cliente: indicadores por estado de las guías, filtros por estado, destino y fecha, y generación o descarga de guías en PDF.</figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src="../img/proyectos/transimperio-login.webp" alt="Pantalla de inicio de sesión del área de clientes" loading="lazy" style="max-width:520px;margin:0 auto">
+                    <figcaption>Acceso al área de clientes.</figcaption>
+                </figure>
+
+                <h2>Cómo funciona</h2>
+                <p>El frontend es HTML, Tailwind CSS y JavaScript sin frameworks, publicado en GitHub Pages con dominio propio. Las acciones del portal (login, importación, generación de guías) se envían a un backend en Google Apps Script, que lee y escribe en las hojas de la operación. AppSheet usa esa misma base como CRM, así que lo que carga el cliente le aparece al equipo sin reprocesos.</p>
+
+                <h2>Resultado</h2>
+                <p>El sitio y el portal están en producción en www.transimperio.com. Los clientes pasan de enviar listados por correo a cargar sus envíos y descargar sus guías por su cuenta.</p>
+            </div>
+
+            <aside class="detail-aside">
+                <h3>Mi rol</h3>
+                <p>Desarrollo completo: diseño, frontend, backend en Apps Script e integración con AppSheet.</p>
+                <h3>Tecnologías</h3>
+                <div class="tags">
+                    <span class="tag">HTML</span><span class="tag">Tailwind CSS</span><span class="tag">JavaScript</span><span class="tag">SheetJS</span><span class="tag">Google Apps Script</span><span class="tag">AppSheet</span><span class="tag">GitHub Pages</span>
+                </div>
+                <h3>Enlaces</h3>
+                <a class="btn btn-sm" href="https://www.transimperio.com" target="_blank" rel="noopener">Sitio en producción ↗</a>
+                <a class="btn btn-sm btn-light" href="../index.html#contacto">¿Necesitas algo similar?</a>
+            </aside>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Oscar Farfan</p>
+            <div class="footer-links"><a href="../index.html">Inicio</a><a href="../index.html#contacto">Contacto</a></div>
+        </div>
+    </footer>
+</body>
+</html>

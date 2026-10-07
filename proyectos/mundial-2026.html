@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorldCup2026-ML | Oscar Farfan</title>
+    <meta name="description" content="Modelo de machine learning y simulación Monte Carlo para predecir el Mundial 2026. Predicción frente al resultado real.">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">Oscar <span>Farfan</span></a>
+            <ul class="nav-list" style="display:flex">
+                <li><a href="../index.html#destacados">← Proyectos</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="detail-hero">
+        <div class="container">
+            <a class="back-link" href="../index.html#destacados">← Volver a proyectos</a>
+            <span class="badge">Proyecto personal · Machine learning</span>
+            <h1>WorldCup2026-ML: predicción del Mundial 2026</h1>
+            <p>Un modelo que predice cada partido y simula el torneo completo 10.000 veces para estimar la probabilidad de cada selección de llegar a cada ronda. Antes del Mundial tenía a España como la favorita número 1.</p>
+            <div class="hero-actions">
+                <a class="btn" href="https://github.com/Oscar98farfan/WorldCup2026-ML" target="_blank" rel="noopener">Ver repositorio ↗</a>
+            </div>
+            <div class="detail-meta">
+                <div class="stat"><strong>1930–2022</strong><span>mundiales en el entrenamiento</span></div>
+                <div class="stat"><strong>10.000</strong><span>torneos simulados</span></div>
+                <div class="stat"><strong>19</strong><span>variables del modelo</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container detail-layout">
+            <div class="detail-main">
+                <h2>Predicción vs. resultado real</h2>
+                <p>España ganó el Mundial 2026 al vencer 1-0 a Argentina en la final. Así se comparan las probabilidades del modelo, calculadas antes del torneo, con lo que pasó:</p>
+                <table class="result-table">
+                    <thead>
+                        <tr><th>Selección</th><th>Ranking del modelo</th><th>Prob. campeón</th><th>Resultado real</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>España</td><td>#1</td><td>9,0%</td><td class="ok">Campeón</td></tr>
+                        <tr><td>Argentina</td><td>#45</td><td>0,4%</td><td class="miss">Finalista</td></tr>
+                        <tr><td>Francia</td><td>#5</td><td>3,6%</td><td class="mid">Semifinal</td></tr>
+                        <tr><td>Inglaterra</td><td>#17</td><td>2,1%</td><td class="mid">Semifinal</td></tr>
+                    </tbody>
+                </table>
+                <p><strong>El acierto:</strong> el modelo identificó al campeón como su máximo favorito, y a Francia entre sus cinco primeros.</p>
+                <p><strong>El error:</strong> subestimó por completo a Argentina. Una lectura probable es que el modelo pesa mucho el historial agregado y el ranking, y no capta el momento de un equipo ni la calidad individual de su plantilla. Ese es el siguiente paso para mejorarlo.</p>
+                <p class="note">Una probabilidad del 9% para el favorito es normal en un torneo de 48 equipos: incluso el mejor equipo tiene más chances de no ganar que de ganar. El valor del modelo está en ordenar bien a los candidatos.</p>
+
+                <h2>Cómo funciona</h2>
+                <ul class="feature-list">
+                    <li><strong>1. ETL:</strong> limpieza de partidos históricos de mundiales (1930-2022) y del ranking FIFA mensual (1992-2023).</li>
+                    <li><strong>2. Ingeniería de variables:</strong> 19 variables, como diferencia de ranking y puntos, localía, confederación, historial en mundiales y promedio de goles.</li>
+                    <li><strong>3. Modelo:</strong> Gradient Boosting que predice si un equipo gana el partido.</li>
+                    <li><strong>4. Simulación Monte Carlo:</strong> el torneo de 48 equipos se juega 10.000 veces partido a partido, respetando grupos y cruces.</li>
+                    <li><strong>5. Reporte:</strong> probabilidades por ronda para cada selección y gráficas automáticas.</li>
+                </ul>
+
+                <figure class="figure">
+                    <img src="../img/proyectos/mundial-candidatos.webp" alt="Gráfica de barras con la probabilidad por ronda de los 16 principales candidatos" loading="lazy">
+                    <figcaption>Probabilidad por ronda de los 16 principales candidatos, antes del torneo.</figcaption>
+                </figure>
+
+                <h2>Validación</h2>
+                <p>Usé validación walk-forward: cada mundial se predice entrenando solo con los anteriores, igual que pasaría en la vida real. Así se evita que el modelo "vea el futuro".</p>
+                <figure class="figure">
+                    <img src="../img/proyectos/mundial-evaluacion.webp" alt="Validación walk-forward, matriz de confusión y curva ROC del modelo" loading="lazy">
+                    <figcaption>Validación walk-forward 2006-2022, matriz de confusión y curva ROC sobre el Mundial 2022.</figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src="../img/proyectos/mundial-variables.webp" alt="Importancia de las variables del modelo" loading="lazy">
+                    <figcaption>Importancia de las variables del modelo.</figcaption>
+                </figure>
+            </div>
+
+            <aside class="detail-aside">
+                <h3>Mi rol</h3>
+                <p>Proyecto individual: datos, modelo, simulación y reportes.</p>
+                <h3>Tecnologías</h3>
+                <div class="tags">
+                    <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Scikit-learn</span><span class="tag">Matplotlib</span><span class="tag">Monte Carlo</span>
+                </div>
+                <h3>Modelo</h3>
+                <p>GradientBoostingClassifier · 200 árboles · profundidad 3</p>
+                <h3>Enlaces</h3>
+                <a class="btn btn-sm" href="https://github.com/Oscar98farfan/WorldCup2026-ML" target="_blank" rel="noopener">Repositorio en GitHub ↗</a>
+            </aside>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Oscar Farfan</p>
+            <div class="footer-links"><a href="../index.html">Inicio</a><a href="../index.html#contacto">Contacto</a></div>
+        </div>
+    </footer>
+</body>
+</html>
