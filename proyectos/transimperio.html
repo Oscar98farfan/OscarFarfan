@@ -46,9 +46,18 @@
                     <li><strong>Sitio corporativo:</strong> presentación de servicios (envíos nacionales, logística urbana, paquetería aérea, reexpediciones y radicación de documentos), cobertura, rastreo de envíos y formulario de contacto.</li>
                     <li><strong>Inicio de sesión de clientes:</strong> acceso con sesión por token contra el backend.</li>
                     <li><strong>Carga masiva desde Excel:</strong> el cliente sube la plantilla, el sistema la lee en el navegador, valida los datos y muestra una vista previa antes de importar.</li>
-                    <li><strong>Gestión de guías:</strong> generación de guías en lote en PDF, visor integrado, descarga, filtros, resumen y paginación.</li>
+                    <li><strong>Gestión de guías:</strong> indicadores por estado (recepcionado, despachado, entregado, devuelto, anulado), filtros, generación de guías en lote en PDF, visor integrado y descarga.</li>
                     <li><strong>CRM en AppSheet:</strong> por detrás, el equipo de la empresa gestiona clientes y operación desde una app low-code conectada a los mismos datos.</li>
                 </ul>
+
+                <figure class="figure">
+                    <img src="../img/proyectos/transimperio-panel.webp" alt="Panel Mis Guías con indicadores por estado, filtros y generación de PDF" loading="lazy">
+                    <figcaption>Panel de cliente: indicadores por estado de las guías, filtros por estado, destino y fecha, y generación o descarga de guías en PDF.</figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src="../img/proyectos/transimperio-login.webp" alt="Pantalla de inicio de sesión del área de clientes" loading="lazy" style="max-width:520px;margin:0 auto">
+                    <figcaption>Acceso al área de clientes.</figcaption>
+                </figure>
 
                 <h2>Cómo funciona</h2>
                 <p>El frontend es HTML, Tailwind CSS y JavaScript sin frameworks, publicado en GitHub Pages con dominio propio. Las acciones del portal (login, importación, generación de guías) se envían a un backend en Google Apps Script, que lee y escribe en las hojas de la operación. AppSheet usa esa misma base como CRM, así que lo que carga el cliente le aparece al equipo sin reprocesos.</p>
