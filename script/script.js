@@ -7,10 +7,13 @@ hamburgerMenu.addEventListener('click', () => {
     overlay.classList.toggle('active');
 });
 
-overlay.addEventListener('click', () => {
+function closeMenu() {
     sideMenu.classList.remove('open');
     overlay.classList.remove('active');
-})
+}
+
+overlay.addEventListener('click', closeMenu);
+sideMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 
 
 function sendToWhatsApp(event) {
@@ -51,7 +54,7 @@ function sendToWhatsApp(event) {
     // Mostrar mensaje de éxito
     const submitBtn = document.querySelector('.submit-btn');
     submitBtn.innerHTML = '✓ Abriendo WhatsApp...';
-    submitBtn.style.backgroundColor = 'var(--azul-oscuro)';
+    submitBtn.style.backgroundColor = 'var(--verde-oscuro)';
     
     // Pequeña pausa para mostrar el mensaje de éxito
     setTimeout(() => {
@@ -61,7 +64,7 @@ function sendToWhatsApp(event) {
         // Resetear el formulario después de un momento
         setTimeout(() => {
             document.getElementById('contactForm').reset();
-            submitBtn.innerHTML = 'Enviar a WhatsApp';
+            submitBtn.innerHTML = 'Enviar por WhatsApp';
             submitBtn.style.backgroundColor = '';
         }, 1000);
     }, 500);

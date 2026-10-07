@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberRisk Intelligence Platform | Oscar Farfan</title>
+    <meta name="description" content="Plataforma de inteligencia de riesgo cibernético para PYMEs colombianas con Big Data y machine learning. Proyecto de la Especialización en Análisis de Datos y Big Data (ESEIT).">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">Oscar <span>Farfan</span></a>
+            <ul class="nav-list" style="display:flex">
+                <li><a href="../index.html#destacados">← Proyectos</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="detail-hero">
+        <div class="container">
+            <a class="back-link" href="../index.html#destacados">← Volver a proyectos</a>
+            <span class="badge">Especialización en Análisis de Datos y Big Data · ESEIT · 2026</span>
+            <h1>CyberRisk Intelligence Platform</h1>
+            <p>Plataforma que le dice a una PYME a qué vulnerabilidades de ciberseguridad está expuesta según el software que usa, de forma gratuita, en español y con contexto colombiano.</p>
+            <div class="hero-actions">
+                <a class="btn" href="https://oscar98farfan.github.io/CyberRiskIntelligencePlatform/" target="_blank" rel="noopener">Ver wiki del proyecto ↗</a>
+                <a class="btn btn-outline" href="https://github.com/Oscar98farfan/CyberRiskIntelligencePlatform" target="_blank" rel="noopener">Repositorio ↗</a>
+            </div>
+            <div class="detail-meta">
+                <div class="stat"><strong>16</strong><span>semanas · sprints semanales</span></div>
+                <div class="stat"><strong>NVD / CVE</strong><span>fuentes públicas de vulnerabilidades</span></div>
+                <div class="stat"><strong>85%</strong><span>de cumplimiento del alcance</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container detail-layout">
+            <div class="detail-main">
+                <h2>El problema</h2>
+                <p>Las PYMEs mueven buena parte de la economía colombiana, pero rara vez tienen un área de seguridad. No saben qué tan expuestas están por el software que usan a diario, y la información pública sobre vulnerabilidades está en inglés y pensada para especialistas.</p>
+
+                <h2>La solución</h2>
+                <ul class="feature-list">
+                    <li><strong>Pipeline de Big Data:</strong> extracción de vulnerabilidades desde la National Vulnerability Database (NVD/CVE), limpieza y preprocesamiento en Python.</li>
+                    <li><strong>Modelo de machine learning:</strong> estima la criticidad de cada escenario de riesgo a partir de vector de ataque, complejidad, privilegios, tipo de debilidad (CWE) e impacto.</li>
+                    <li><strong>Escáner web:</strong> la empresa selecciona las tecnologías que usa, responde un cuestionario y recibe un dashboard con su nivel de exposición y recomendaciones de mitigación.</li>
+                    <li><strong>API en Flask:</strong> recibe el perfil de la empresa, ejecuta el modelo y devuelve el diagnóstico al frontend.</li>
+                </ul>
+
+                <figure class="figure">
+                    <img src="../img/proyectos/cyberrisk-wiki.webp" alt="Wiki del proyecto CyberRisk con la descripción y los entregables" loading="lazy">
+                    <figcaption>Wiki del proyecto: documentación de cada sprint, desde el acta de constitución hasta la entrega final.</figcaption>
+                </figure>
+
+                <h2>Mi rol: ML Engineer</h2>
+                <p>Trabajé en equipo con Juan Camilo Madero (arquitecto de datos y líder del proyecto). Fui responsable del ciclo de machine learning bajo la metodología CRISP-DM: exploración de los datos de NVD, preparación de variables, entrenamiento y validación del modelo, e integración de las predicciones con la API.</p>
+
+                <h2>Resultado</h2>
+                <p>Se entregó un prototipo funcional validado con pruebas técnicas y pruebas con usuarios en entorno local: integración con fuentes CVE/NVD, motor de análisis, plataforma web, dashboard de riesgos y recomendaciones básicas. El despliegue en producción quedó como trabajo futuro, fuera del alcance académico.</p>
+                <p class="note">La plataforma corre en entorno local, por eso aquí se muestra la wiki y el repositorio en lugar de una demo en vivo.</p>
+            </div>
+
+            <aside class="detail-aside">
+                <h3>Equipo</h3>
+                <p>Juan Camilo Madero · Arquitecto de datos y líder<br>Oscar Daniel Farfan · ML Engineer<br>Asesor académico: Cesar Espinoza</p>
+                <h3>Metodología</h3>
+                <p>Scrum + CRISP-DM</p>
+                <h3>Tecnologías</h3>
+                <div class="tags">
+                    <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">Jupyter</span><span class="tag">Flask</span><span class="tag">JavaScript</span><span class="tag">Chart.js</span>
+                </div>
+                <h3>Enlaces</h3>
+                <a class="btn btn-sm" href="https://oscar98farfan.github.io/CyberRiskIntelligencePlatform/" target="_blank" rel="noopener">Wiki del proyecto ↗</a>
+                <a class="btn btn-sm btn-light" href="https://github.com/Oscar98farfan/CyberRiskIntelligencePlatform" target="_blank" rel="noopener">Repositorio en GitHub ↗</a>
+            </aside>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Oscar Farfan</p>
+            <div class="footer-links"><a href="../index.html">Inicio</a><a href="../index.html#contacto">Contacto</a></div>
+        </div>
+    </footer>
+</body>
+</html>
