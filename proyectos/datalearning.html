@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataLearning | Oscar Farfan</title>
+    <meta name="description" content="Plataforma para practicar ingeniería y análisis de datos sin internet: SQL, Python y pandas reales en el navegador con WebAssembly, simulador de Git y 331 ejercicios.">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">Oscar <span>Farfan</span></a>
+            <ul class="nav-list" style="display:flex">
+                <li><a href="../index.html#destacados">← Proyectos</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="detail-hero">
+        <div class="container">
+            <a class="back-link" href="../index.html#destacados">← Volver a proyectos</a>
+            <span class="badge">Proyecto personal · Desarrollo web</span>
+            <h1>DataLearning: plataforma para practicar ingeniería de datos</h1>
+            <p>Una plataforma para practicar lo que usa un analista o ingeniero de datos, de lo básico a lo avanzado, desde el celular o el PC y sin conexión. El reto técnico fue ejecutar SQL, Python y Git reales dentro del navegador, sin ningún servidor.</p>
+            <div class="hero-actions">
+                <a class="btn" href="https://oscar98farfan.github.io/DataLearning/" target="_blank" rel="noopener">Probar la app ↗</a>
+            </div>
+            <div class="detail-meta">
+                <div class="stat"><strong>331</strong><span>ejercicios en 7 temas</span></div>
+                <div class="stat"><strong>4</strong><span>laboratorios interactivos</span></div>
+                <div class="stat"><strong>175</strong><span>términos de glosario</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container detail-layout">
+            <div class="detail-main">
+                <h2>El problema</h2>
+                <p>Las plataformas de práctica suelen pedir internet, una cuenta o instalar herramientas, y casi ninguna se usa bien desde el celular. Además, muchas corrigen comparando texto: si escribes una consulta correcta pero distinta a la solución, te la marcan mal.</p>
+
+                <h2>Cómo lo resolví</h2>
+                <ul class="feature-list">
+                    <li><strong>SQL real:</strong> SQLite compilado a WebAssembly. Tu consulta se ejecuta y se compara su <em>resultado</em> con el de la solución, así que cuenta como correcta aunque esté escrita de otra forma.</li>
+                    <li><strong>Python y pandas reales</strong> con Pyodide, incluido un laboratorio con 24 ejemplos: POO, limpieza de datos, merge, groupby y series de tiempo.</li>
+                    <li><strong>Simulador de Git propio:</strong> merge de 3 vías, fast-forward, conflictos, rebase, squash, revert, reset, cherry-pick y stash, con 12 retos. En cada caso explica si la historia se conserva o se reescribe.</li>
+                    <li><strong>Laboratorio de IA:</strong> simulación de tokens, temperatura, embeddings y RAG paso a paso.</li>
+                    <li><strong>Funciona sin internet:</strong> es una PWA con service worker que se instala en el celular como una app.</li>
+                    <li><strong>Siete temas:</strong> Python, Pandas, SQL, Power BI / DAX, Git, arquitectura de datos (Spark y Delta) e IA generativa, en tres niveles.</li>
+                </ul>
+
+                <figure class="figure">
+                    <img src="../img/proyectos/datalearning-git.webp" alt="Grafo de la historia en el laboratorio de Git, con una rama fusionada en main" loading="lazy">
+                    <figcaption>Laboratorio de Git: la historia se dibuja en vivo a medida que escribes comandos en la terminal.</figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src="../img/proyectos/datalearning-sql.webp" alt="Editor SQL con colores de sintaxis y botones para ejecutar y restaurar los datos" loading="lazy">
+                    <figcaption>Laboratorio SQL: consultas libres sobre tablas de práctica, ejecutadas en SQLite dentro del navegador.</figcaption>
+                </figure>
+
+                <h2>Calidad</h2>
+                <p>Una batería de pruebas (<code>npm test</code>) ejecuta cada solución: que cada SQL corra sobre los datos, que cada ejemplo de Python funcione en Python real y que cada reto de Git se resuelva. También verifica que el modo sin internet incluya todos los archivos.</p>
+
+                <h2>Siguientes pasos</h2>
+                <p>Una ruta de aprendizaje con mini proyectos (Bronze → Silver → Gold con un caso de ventas) y login con Supabase para sincronizar el progreso entre dispositivos.</p>
+            </div>
+
+            <aside class="detail-aside">
+                <h3>Mi rol</h3>
+                <p>Proyecto individual: diseño, contenido, motores de ejecución y pruebas.</p>
+                <h3>Tecnologías</h3>
+                <div class="tags">
+                    <span class="tag">JavaScript</span><span class="tag">HTML/CSS</span><span class="tag">WebAssembly</span><span class="tag">SQLite (sql.js)</span><span class="tag">Pyodide</span><span class="tag">Service Worker</span><span class="tag">Node</span>
+                </div>
+                <h3>Enlaces</h3>
+                <a class="btn btn-sm" href="https://oscar98farfan.github.io/DataLearning/" target="_blank" rel="noopener">Probar la app ↗</a>
+                <a class="btn btn-sm btn-light" href="https://github.com/Oscar98farfan/DataLearning" target="_blank" rel="noopener">Repositorio en GitHub ↗</a>
+            </aside>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Oscar Farfan</p>
+            <div class="footer-links"><a href="../index.html">Inicio</a><a href="../index.html#contacto">Contacto</a></div>
+        </div>
+    </footer>
+</body>
+</html>
